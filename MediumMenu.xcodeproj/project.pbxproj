@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		6ECFE5681A7F4F5500C3820C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECFE5671A7F4F5500C3820C /* AppDelegate.swift */; };
 		6ECFE56A1A7F4F5500C3820C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECFE5691A7F4F5500C3820C /* ViewController.swift */; };
-		6ECFE56D1A7F4F5500C3820C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ECFE56B1A7F4F5500C3820C /* Main.storyboard */; };
 		6ECFE56F1A7F4F5500C3820C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ECFE56E1A7F4F5500C3820C /* Images.xcassets */; };
-		6ECFE5721A7F4F5500C3820C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ECFE5701A7F4F5500C3820C /* LaunchScreen.xib */; };
 		6ECFE57E1A7F4F5500C3820C /* MediumMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECFE57D1A7F4F5500C3820C /* MediumMenuTests.swift */; };
+		6ECFE5881A7F521900C3820C /* MediumMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECFE5871A7F521900C3820C /* MediumMenu.swift */; };
+		6ECFE58A1A807BCA00C3820C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECFE5891A807BCA00C3820C /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +36,8 @@
 		6ECFE5771A7F4F5500C3820C /* MediumMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediumMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ECFE57C1A7F4F5500C3820C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6ECFE57D1A7F4F5500C3820C /* MediumMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumMenuTests.swift; sourceTree = "<group>"; };
+		6ECFE5871A7F521900C3820C /* MediumMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumMenu.swift; sourceTree = "<group>"; };
+		6ECFE5891A807BCA00C3820C /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +79,10 @@
 		6ECFE5641A7F4F5500C3820C /* MediumMenu */ = {
 			isa = PBXGroup;
 			children = (
+				6ECFE5871A7F521900C3820C /* MediumMenu.swift */,
 				6ECFE5671A7F4F5500C3820C /* AppDelegate.swift */,
 				6ECFE5691A7F4F5500C3820C /* ViewController.swift */,
+				6ECFE5891A807BCA00C3820C /* NavigationController.swift */,
 				6ECFE56B1A7F4F5500C3820C /* Main.storyboard */,
 				6ECFE56E1A7F4F5500C3820C /* Images.xcassets */,
 				6ECFE5701A7F4F5500C3820C /* LaunchScreen.xib */,
@@ -192,8 +196,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ECFE56D1A7F4F5500C3820C /* Main.storyboard in Resources */,
-				6ECFE5721A7F4F5500C3820C /* LaunchScreen.xib in Resources */,
 				6ECFE56F1A7F4F5500C3820C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +215,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6ECFE56A1A7F4F5500C3820C /* ViewController.swift in Sources */,
+				6ECFE58A1A807BCA00C3820C /* NavigationController.swift in Sources */,
+				6ECFE5881A7F521900C3820C /* MediumMenu.swift in Sources */,
 				6ECFE5681A7F4F5500C3820C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +295,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -338,6 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MediumMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -405,6 +410,7 @@
 				6ECFE5831A7F4F5500C3820C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6ECFE5841A7F4F5500C3820C /* Build configuration list for PBXNativeTarget "MediumMenuTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +419,7 @@
 				6ECFE5861A7F4F5500C3820C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
