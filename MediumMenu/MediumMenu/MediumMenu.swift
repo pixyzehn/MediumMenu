@@ -146,7 +146,7 @@ class MediumMenu: UIView, UITableViewDataSource, UITableViewDelegate {
         self.titleFont = UIFont(name: MENU_ITEM_DEFAULT_FONTNAME, size: MENU_ITEM_DEFAULT_FONTSIZE)
         self.height = 400
     }
-      
+
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -208,14 +208,16 @@ class MediumMenu: UIView, UITableViewDataSource, UITableViewDelegate {
             if viewCenter.y >= CRITERION && viewCenter.y <= (CRITERION + height!) - MENU_BOUNCE_OFFSET {
                 currentMenuState = State.Displaying
                 viewCenter.y = abs(viewCenter.y + translation.y)
-                contentController?.view.center = viewCenter
+                if viewCenter.y >= CRITERION && viewCenter.y <= (CRITERION + height!) - MENU_BOUNCE_OFFSET {
+                    contentController?.view.center = viewCenter
+                }
                 pan.setTranslation(CGPointZero, inView: contentController?.view)
             }
         } else if pan.state == UIGestureRecognizerState.Ended {
             let velocity: CGPoint = pan.velocityInView(contentController?.view.superview)
             if velocity.y > VELOCITY_TRESHOLD {
                 self.openMenuFromCenterWithVelocity(velocity.y)
-            } else if velocity.y < VELOCITY_TRESHOLD {
+            } else if velocity.y < -VELOCITY_TRESHOLD {
                 self.closeMenuFromCenterWithVelocity(abs(velocity.y))
             } else if velocity.y < CRITERION + (height! / 2) {
                 self.closeMenuFromCenterWithVelocity(AUTOCLOSE_VELOCITY)
