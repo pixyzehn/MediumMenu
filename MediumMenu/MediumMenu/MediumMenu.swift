@@ -10,7 +10,7 @@ import UIKit
 
 let CELLIDENTIFIER                      = "menubutton"
 let MENU_BOUNCE_OFFSET: CGFloat         = 10
-let PANGESTUREENABLE                    = 1// 1 is enable
+let PANGESTUREENABLE                    = 1 // 1 is enable
 let VELOCITY_TRESHOLD: CGFloat          = 1000
 let AUTOCLOSE_VELOCITY: CGFloat         = 1200
 let MENU_ITEM_DEFAULT_FONTNAME          = "HelveticaNeue-Light"
@@ -23,7 +23,7 @@ enum State {
     case Displaying
 }
 
-enum Allignment {
+enum Alignment {
     case Left
     case Right
     case Center
@@ -77,7 +77,7 @@ class MediumMenu: UIView, UITableViewDataSource, UITableViewDelegate {
     var textColor: UIColor?
     var highLightTextColor: UIColor?
     var titleFont: UIFont?
-    var titleAllignment: Allignment?
+    var titleAlignment: Alignment?
     
     var _backgroundColor: UIColor?
     override var backgroundColor: UIColor? {
@@ -157,17 +157,17 @@ class MediumMenu: UIView, UITableViewDataSource, UITableViewDelegate {
     
     // Initializers
 
-    convenience init(Items menuItems: [MediumMenuItem], andTextAllignment titleAllignment: Allignment, forViewController viewController: UIViewController) {
+    convenience init(Items menuItems: [MediumMenuItem], andTextAlignment titleAlignment: Alignment, forViewController viewController: UIViewController) {
         
-        self.init(Items: menuItems, textColor: UIColor.lightGrayColor(), hightLightTextColor: UIColor.whiteColor(), backGroundColor: UIColor.blackColor(), andTextAllignment: titleAllignment, forViewController: viewController)
+        self.init(Items: menuItems, textColor: UIColor.lightGrayColor(), hightLightTextColor: UIColor.whiteColor(), backGroundColor: UIColor.blackColor(), andTextAlignment: titleAlignment, forViewController: viewController)
     }
     
-    convenience init(Items menuItems: [MediumMenuItem], textColor: UIColor, hightLightTextColor: UIColor, backGroundColor: UIColor, andTextAllignment titleAllignment: Allignment, forViewController viewController: UIViewController) {
+    convenience init(Items menuItems: [MediumMenuItem], textColor: UIColor, hightLightTextColor: UIColor, backGroundColor: UIColor, andTextAlignment titleAlignment: Alignment, forViewController viewController: UIViewController) {
         self.init()
         self.frame = CGRectMake(0, 0, CGRectGetWidth(UIScreen.mainScreen().bounds), self.height!)
         self.menuContentTable = UITableView(frame: self.frame)
         self.menuItems = menuItems
-        self.titleAllignment = titleAllignment
+        self.titleAlignment = titleAlignment
         self.textColor = textColor
         self.highLightTextColor = hightLightTextColor
         self.backgroundColor = backGroundColor
@@ -332,13 +332,13 @@ class MediumMenu: UIView, UITableViewDataSource, UITableViewDelegate {
     }
     
     func setMenuTitleAlligmentForCell(cell: UITableViewCell) {
-        if let tAlignment = titleAllignment {
+        if let tAlignment = titleAlignment {
             switch tAlignment {
-            case Allignment.Left:
+            case Alignment.Left:
                 cell.textLabel?.textAlignment = NSTextAlignment.Left
-            case Allignment.Center:
+            case Alignment.Center:
                 cell.textLabel?.textAlignment = NSTextAlignment.Center
-            case Allignment.Right:
+            case Alignment.Right:
                 cell.textLabel?.textAlignment = NSTextAlignment.Right
             default:
                 break

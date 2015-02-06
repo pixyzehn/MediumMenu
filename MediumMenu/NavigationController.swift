@@ -51,7 +51,7 @@ class NavigationController: UINavigationController {
             self.setViewControllers([signoutViewController], animated: false)
         })
         
-        menu = MediumMenu(Items: [item1, item2, item3, item4, item5], andTextAllignment: Allignment.Left, forViewController: self)
+        menu = MediumMenu(Items: [item1, item2, item3, item4, item5], andTextAlignment: Alignment.Left, forViewController: self)
     }
     
     func showMenu() {
