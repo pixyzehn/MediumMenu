@@ -24,7 +24,7 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let homeViewController: HomeViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
-        self.setViewControllers([homeViewController], animated: false)
+        setViewControllers([homeViewController], animated: false)
 
         let item1: MediumMenuItem = MediumMenuItem(menuItemWithTitle: "Home", withCompletionHandler: {(finished: Bool) -> () in
             let homeViewController: HomeViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
@@ -36,8 +36,8 @@ class NavigationController: UINavigationController {
             self.setViewControllers([topStoriesViewController], animated: false)
         })
         
-        let item3: MediumMenuItem = MediumMenuItem(menuItemWithTitle: "Bookmark", withCompletionHandler: {(finished: Bool) -> () in
-            let bookMarksViewController: BookmarksViewController = storyboard.instantiateViewControllerWithIdentifier("Bookmark") as BookmarksViewController
+        let item3: MediumMenuItem = MediumMenuItem(menuItemWithTitle: "Bookmarks", withCompletionHandler: {(finished: Bool) -> () in
+            let bookMarksViewController: BookmarksViewController = storyboard.instantiateViewControllerWithIdentifier("Bookmarks") as BookmarksViewController
             self.setViewControllers([bookMarksViewController], animated: false)
         })
 

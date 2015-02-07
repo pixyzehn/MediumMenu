@@ -62,7 +62,7 @@
         <!--Bookmarks View Controller-->
         <scene sceneID="ENl-HM-mcV">
             <objects>
-                <viewController storyboardIdentifier="Bookmark" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kzq-i0-bk1" customClass="BookmarksViewController" customModule="MediumMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Bookmarks" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kzq-i0-bk1" customClass="BookmarksViewController" customModule="MediumMenu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZPZ-VS-KpP"/>
                         <viewControllerLayoutGuide type="bottom" id="xe1-gm-zzl"/>

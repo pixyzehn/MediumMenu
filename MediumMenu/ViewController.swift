@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu"), style: UIBarButtonItemStyle.Plain, target: self.navigationController, action: "showMenu")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "medium_icon"), style: UIBarButtonItemStyle.Plain, target: navigationController, action: "showMenu")
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.blackColor()
     }
 
     override func didReceiveMemoryWarning() {
