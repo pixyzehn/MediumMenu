@@ -1,15 +1,15 @@
 //
 //  ViewController.swift
-//  MediumMenu
+//  MediumMenu-Sample
 //
-//  Created by pixyzehn on 2/2/15.
+//  Created by pixyzehn on 2/8/15.
 //  Copyright (c) 2015 pixyzehn. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,10 +17,6 @@ class ViewController: UIViewController {
         icon.imageInsets = UIEdgeInsetsMake(-10, 0, 0, 0)
         icon.tintColor = UIColor.blackColor()
         navigationItem.leftBarButtonItem = icon
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 }
 

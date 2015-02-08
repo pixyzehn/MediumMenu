@@ -80,11 +80,11 @@
 		6E98868C1A81C3C8009D4195 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6E9886931A81D4DF009D4195 /* HomeViewController.swift */,
+				6E9886951A81D4DF009D4195 /* TopStoriesViewController.swift */,
 				6E9886911A81D4DF009D4195 /* BookmarksViewController.swift */,
 				6E9886921A81D4DF009D4195 /* HelpViewController.swift */,
-				6E9886931A81D4DF009D4195 /* HomeViewController.swift */,
 				6E9886941A81D4DF009D4195 /* SignoutViewController.swift */,
-				6E9886951A81D4DF009D4195 /* TopStoriesViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
