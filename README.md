@@ -1,9 +1,7 @@
-# MediumMenu
-
 MediumMenu
 ====================
 
-Medium 1.8.168 menu in Swift. That is still one of my favorite menus because that is easy to use.
+Medium 1.8.168 menu in Swift. That is still one of my favorite menus because that is easy to use and looks beautiful.
 
 Inspired by [RBMenu](https://github.com/RoshanNindrai/RBMenu). I made that a reference and customized a fine point.
 
@@ -13,7 +11,7 @@ Inspired by [RBMenu](https://github.com/RoshanNindrai/RBMenu). I made that a ref
 
 ## Description
 
-MedimuMenu is really similar to real Medium for iOS's menu.
+MediumMenu is really similar to menu of real Medium for iOS.
 
 ## Install
 
@@ -21,8 +19,7 @@ MedimuMenu is really similar to real Medium for iOS's menu.
 
 2. Due to the lack of choice whether status bar is hidden or not,  Edit info.plist in your project. 
 
-
-3. Add "Status bar is initially hidden" and "View controller-based status bar appearance". Eash value is "YES" and "NO".
+3. Add "Status bar is initially hidden" and "View controller-based status bar appearance" in info.plist as key. Eash value is "YES" and "NO".
 
 In the rest of the details, refer to MediumMenu-Sample project. 
 
