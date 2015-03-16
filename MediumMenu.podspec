@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
   s.ios.deployment_target = "8.0"
+  s.platform = :ios, "8.0"
   s.source = { :git => "https://github.com/pixyzehn/MediumMenu.git", :tag => "#{s.version}" }
   s.source_files = "MediumMenu/*.swift"
 end
