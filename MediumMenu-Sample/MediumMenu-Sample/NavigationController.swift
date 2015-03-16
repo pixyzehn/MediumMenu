@@ -18,10 +18,11 @@ class NavigationController: UINavigationController {
         super.init(coder: aDecoder)
     }
     
-    var menu: MediumMenu = MediumMenu()
+    var showMediumMenu:() -> () = {}
     
     override func viewDidLoad() {
-        super.viewDidLoad() 
+        super.viewDidLoad()
+        
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let homeViewController: HomeViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
@@ -51,12 +52,15 @@ class NavigationController: UINavigationController {
             let signoutViewController: SignoutViewController = storyboard.instantiateViewControllerWithIdentifier("Signout") as SignoutViewController
             self.setViewControllers([signoutViewController], animated: false)
         })
-        
-        menu = MediumMenu(Items: [item1, item2, item3, item4, item5], andTextAlignment: Alignment.Left, forViewController: self)
+
+        let menu = MediumMenu(Items: [item1, item2, item3, item4, item5], andTextAlignment: .Left, forViewController: self)
+        showMediumMenu = {
+            menu.showMenu()
+        }
     }
     
     func showMenu() {
-        menu.showMenu()
+        showMediumMenu()
     }
 }
 

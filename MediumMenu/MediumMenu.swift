@@ -164,6 +164,13 @@ class MediumMenu: UIView, UITableViewDataSource, UITableViewDelegate {
         self.contentController = viewController
     }
     
+    class var sharedInstance: MediumMenu {
+        struct Static {
+            static let instance: MediumMenu = MediumMenu()
+        }
+        return Static.instance
+    }
+    
     func setShadowProperties() {
         _contentController?.view.layer.shadowOffset = CGSizeMake(0, 1)
         _contentController?.view.layer.shadowRadius = 4.0
