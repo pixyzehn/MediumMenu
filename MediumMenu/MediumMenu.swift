@@ -35,30 +35,6 @@ enum Alignment {
 
 typealias completionHandler = Bool -> ()
 
-/**
-*  MediumMenuItem
-*/
-
-class MediumMenuItem: NSObject {
-    var title: String?
-    var completion: completionHandler?
-    private var menuButton: UIButton?
-    
-    override init() {
-        super.init()
-    }
-    
-    convenience init(menuItemWithTitle title: String, withCompletionHandler completion: completionHandler) {
-        self.init()
-        self.title = title
-        self.completion = completion
-    }    
-}
-
-/**
-*  MediumMenu
-*/
-
 class MediumMenu: UIView, UITableViewDataSource, UITableViewDelegate {
     let CRITERION = UIScreen.mainScreen().bounds.size.height / 2
     var currentMenuState: State?

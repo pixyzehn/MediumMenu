@@ -18,7 +18,7 @@ class NavigationController: UINavigationController {
         super.init(coder: aDecoder)
     }
     
-    var menu: MediumMenu?
+    var menu: MediumMenu = MediumMenu()
     
     override func viewDidLoad() {
         super.viewDidLoad() 
@@ -56,7 +56,7 @@ class NavigationController: UINavigationController {
     }
     
     func showMenu() {
-        menu?.showMenu()
+        menu.showMenu()
     }
 }
 
