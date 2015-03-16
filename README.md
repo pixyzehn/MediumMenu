@@ -9,6 +9,16 @@ Inspired by [RBMenu](https://github.com/RoshanNindrai/RBMenu). I made that a ref
 
 ![MediumMenu](https://github.com/pixyzehn/MediumMenu/blob/master/Assets/MediumMenu.gif)
 
+##Installation
+
+The easiest way to get started is to use [CocoaPods](http://cocoapods.org/). Add the following line to your Podfile:
+
+```ruby
+use_frameworks!
+# The following is a Library of Swift.
+pod 'MediumMenu'
+```
+
 ## Description
 
 MediumMenu is really similar to menu of real Medium for iOS.
