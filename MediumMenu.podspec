@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary = "A menu based on Medium iOS app"
   s.homepage = 'https://github.com/pixyzehn/MediumMenu'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
-  s.author = { "Nagasawa Hiroki" => "civokjots0109@gmail.com" }
+  s.author = { "Nagasawa Hiroki" => "civokjots10.pico@gmail.com" }
 
   s.requires_arc = true
   s.ios.deployment_target = "8.0"
