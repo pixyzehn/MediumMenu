@@ -20,7 +20,7 @@
 		6E4206C01AB6E35000A51136 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6D11A87370000F6093C /* BookmarksViewController.swift */; };
 		6E4206C11AB6E35000A51136 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6D21A87370000F6093C /* HelpViewController.swift */; };
 		6E4206C21AB6E35000A51136 /* SignoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6D41A87370000F6093C /* SignoutViewController.swift */; };
-		6E4206C41AB6E47100A51136 /* MediumMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4206C31AB6E47100A51136 /* MediumMenuItem.swift */; };
+		6E4206C61AB6E56800A51136 /* MediumMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4206C51AB6E56800A51136 /* MediumMenuItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,7 @@
 		6E08A6D51A87370000F6093C /* TopStoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopStoriesViewController.swift; sourceTree = "<group>"; };
 		6E08A6DB1A87374A00F6093C /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		6E1F4AB41AB6CD6E0041955A /* MediumMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediumMenu.swift; path = ../../MediumMenu/MediumMenu.swift; sourceTree = "<group>"; };
-		6E4206C31AB6E47100A51136 /* MediumMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumMenuItem.swift; sourceTree = "<group>"; };
+		6E4206C51AB6E56800A51136 /* MediumMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediumMenuItem.swift; path = ../../MediumMenu/MediumMenuItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				6E1F4AB41AB6CD6E0041955A /* MediumMenu.swift */,
-				6E4206C31AB6E47100A51136 /* MediumMenuItem.swift */,
+				6E4206C51AB6E56800A51136 /* MediumMenuItem.swift */,
 			);
 			name = MediumMenu;
 			sourceTree = "<group>";
@@ -252,7 +252,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E4206C41AB6E47100A51136 /* MediumMenuItem.swift in Sources */,
+				6E4206C61AB6E56800A51136 /* MediumMenuItem.swift in Sources */,
+				6E1F4AB51AB6CD6E0041955A /* MediumMenu.swift in Sources */,
 				6E4206BE1AB6E35000A51136 /* HomeViewController.swift in Sources */,
 				6E4206BF1AB6E35000A51136 /* TopStoriesViewController.swift in Sources */,
 				6E4206C01AB6E35000A51136 /* BookmarksViewController.swift in Sources */,
@@ -261,7 +262,6 @@
 				6E4206BB1AB6E34600A51136 /* AppDelegate.swift in Sources */,
 				6E4206BC1AB6E34600A51136 /* ViewController.swift in Sources */,
 				6E4206BD1AB6E34600A51136 /* NavigationController.swift in Sources */,
-				6E1F4AB51AB6CD6E0041955A /* MediumMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
