@@ -13,13 +13,13 @@
 		6E08A6B51A87369000F6093C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E08A6B41A87369000F6093C /* Images.xcassets */; };
 		6E08A6B81A87369000F6093C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E08A6B61A87369000F6093C /* LaunchScreen.xib */; };
 		6E08A6C41A87369000F6093C /* MediumMenu_SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6C31A87369000F6093C /* MediumMenu_SampleTests.swift */; };
-		6E08A6CF1A8736F700F6093C /* MediumMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6CE1A8736F700F6093C /* MediumMenu.swift */; };
 		6E08A6D61A87370000F6093C /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6D11A87370000F6093C /* BookmarksViewController.swift */; };
 		6E08A6D71A87370000F6093C /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6D21A87370000F6093C /* HelpViewController.swift */; };
 		6E08A6D81A87370000F6093C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6D31A87370000F6093C /* HomeViewController.swift */; };
 		6E08A6D91A87370000F6093C /* SignoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6D41A87370000F6093C /* SignoutViewController.swift */; };
 		6E08A6DA1A87370000F6093C /* TopStoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6D51A87370000F6093C /* TopStoriesViewController.swift */; };
 		6E08A6DC1A87374A00F6093C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6DB1A87374A00F6093C /* NavigationController.swift */; };
+		6E1F4AB51AB6CD6E0041955A /* MediumMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1F4AB41AB6CD6E0041955A /* MediumMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,13 +43,13 @@
 		6E08A6BD1A87369000F6093C /* MediumMenu-SampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MediumMenu-SampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E08A6C21A87369000F6093C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E08A6C31A87369000F6093C /* MediumMenu_SampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumMenu_SampleTests.swift; sourceTree = "<group>"; };
-		6E08A6CE1A8736F700F6093C /* MediumMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumMenu.swift; sourceTree = "<group>"; };
 		6E08A6D11A87370000F6093C /* BookmarksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		6E08A6D21A87370000F6093C /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		6E08A6D31A87370000F6093C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6E08A6D41A87370000F6093C /* SignoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignoutViewController.swift; sourceTree = "<group>"; };
 		6E08A6D51A87370000F6093C /* TopStoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopStoriesViewController.swift; sourceTree = "<group>"; };
 		6E08A6DB1A87374A00F6093C /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		6E1F4AB41AB6CD6E0041955A /* MediumMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediumMenu.swift; path = ../../MediumMenu/MediumMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +91,8 @@
 		6E08A6AA1A87369000F6093C /* MediumMenu-Sample */ = {
 			isa = PBXGroup;
 			children = (
+				6E1F4AB61AB6CD780041955A /* MediumMenu */,
 				6E08A6D01A87370000F6093C /* View */,
-				6E08A6CD1A8736F700F6093C /* MediumMenu */,
 				6E08A6AD1A87369000F6093C /* AppDelegate.swift */,
 				6E08A6AF1A87369000F6093C /* ViewController.swift */,
 				6E08A6DB1A87374A00F6093C /* NavigationController.swift */,
@@ -129,14 +129,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6E08A6CD1A8736F700F6093C /* MediumMenu */ = {
-			isa = PBXGroup;
-			children = (
-				6E08A6CE1A8736F700F6093C /* MediumMenu.swift */,
-			);
-			path = MediumMenu;
-			sourceTree = "<group>";
-		};
 		6E08A6D01A87370000F6093C /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +139,14 @@
 				6E08A6D41A87370000F6093C /* SignoutViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6E1F4AB61AB6CD780041955A /* MediumMenu */ = {
+			isa = PBXGroup;
+			children = (
+				6E1F4AB41AB6CD6E0041955A /* MediumMenu.swift */,
+			);
+			name = MediumMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,9 +249,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E1F4AB51AB6CD6E0041955A /* MediumMenu.swift in Sources */,
 				6E08A6D61A87370000F6093C /* BookmarksViewController.swift in Sources */,
 				6E08A6B01A87369000F6093C /* ViewController.swift in Sources */,
-				6E08A6CF1A8736F700F6093C /* MediumMenu.swift in Sources */,
 				6E08A6D91A87370000F6093C /* SignoutViewController.swift in Sources */,
 				6E08A6DC1A87374A00F6093C /* NavigationController.swift in Sources */,
 				6E08A6DA1A87370000F6093C /* TopStoriesViewController.swift in Sources */,
@@ -449,6 +449,7 @@
 				6E08A6C91A87369000F6093C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E08A6CA1A87369000F6093C /* Build configuration list for PBXNativeTarget "MediumMenu-SampleTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +458,7 @@
 				6E08A6CC1A87369000F6093C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
