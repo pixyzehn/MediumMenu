@@ -19,4 +19,3 @@ class ViewController: UIViewController {
         navigationItem.leftBarButtonItem = icon
     }
 }
-
