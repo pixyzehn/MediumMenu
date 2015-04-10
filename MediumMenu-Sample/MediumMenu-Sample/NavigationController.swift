@@ -10,10 +10,6 @@ import UIKit
 
 class NavigationController: UINavigationController {
    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init()
-    }
-
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -25,31 +21,31 @@ class NavigationController: UINavigationController {
         
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeViewController: HomeViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
+        let homeViewController: HomeViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
         setViewControllers([homeViewController], animated: false)
 
         let item1: MediumMenuItem = MediumMenuItem(menuItemWithTitle: "Home", withCompletionHandler: {(finished: Bool) -> () in
-            let homeViewController: HomeViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
+            let homeViewController: HomeViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
             self.setViewControllers([homeViewController], animated: false)
         } )
         
         let item2: MediumMenuItem = MediumMenuItem(menuItemWithTitle: "Top stories", withCompletionHandler: {(finished: Bool) -> () in
-            let topStoriesViewController: TopStoriesViewController = storyboard.instantiateViewControllerWithIdentifier("Top") as TopStoriesViewController
+            let topStoriesViewController: TopStoriesViewController = storyboard.instantiateViewControllerWithIdentifier("Top") as! TopStoriesViewController
             self.setViewControllers([topStoriesViewController], animated: false)
         })
         
         let item3: MediumMenuItem = MediumMenuItem(menuItemWithTitle: "Bookmarks", withCompletionHandler: {(finished: Bool) -> () in
-            let bookMarksViewController: BookmarksViewController = storyboard.instantiateViewControllerWithIdentifier("Bookmarks") as BookmarksViewController
+            let bookMarksViewController: BookmarksViewController = storyboard.instantiateViewControllerWithIdentifier("Bookmarks") as! BookmarksViewController
             self.setViewControllers([bookMarksViewController], animated: false)
         })
 
         let item4: MediumMenuItem = MediumMenuItem(menuItemWithTitle: "Help", withCompletionHandler: {(finished: Bool) -> () in
-            let helpViewController: HelpViewController = storyboard.instantiateViewControllerWithIdentifier("Help") as HelpViewController
+            let helpViewController: HelpViewController = storyboard.instantiateViewControllerWithIdentifier("Help") as! HelpViewController
             self.setViewControllers([helpViewController], animated: false)
         })
         
         let item5: MediumMenuItem = MediumMenuItem(menuItemWithTitle: "Sign out", withCompletionHandler: {(finished: Bool) -> () in
-            let signoutViewController: SignoutViewController = storyboard.instantiateViewControllerWithIdentifier("Signout") as SignoutViewController
+            let signoutViewController: SignoutViewController = storyboard.instantiateViewControllerWithIdentifier("Signout") as! SignoutViewController
             self.setViewControllers([signoutViewController], animated: false)
         })
 
