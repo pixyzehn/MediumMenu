@@ -21,6 +21,13 @@
 		6E4206C11AB6E35000A51136 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6D21A87370000F6093C /* HelpViewController.swift */; };
 		6E4206C21AB6E35000A51136 /* SignoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6D41A87370000F6093C /* SignoutViewController.swift */; };
 		6E4206C61AB6E56800A51136 /* MediumMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4206C51AB6E56800A51136 /* MediumMenuItem.swift */; };
+		BF08F3C81AD8CE0700A5FECD /* MediumMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = BF08F3C71AD8CE0700A5FECD /* MediumMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF08F3CE1AD8CE0800A5FECD /* MediumMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF08F3C31AD8CE0700A5FECD /* MediumMenu.framework */; };
+		BF08F3D71AD8CE0800A5FECD /* MediumMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08F3D61AD8CE0800A5FECD /* MediumMenuTests.swift */; };
+		BF08F3DA1AD8CE0800A5FECD /* MediumMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF08F3C31AD8CE0700A5FECD /* MediumMenu.framework */; };
+		BF08F3DB1AD8CE0800A5FECD /* MediumMenu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF08F3C31AD8CE0700A5FECD /* MediumMenu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF08F3E31AD8CEAF00A5FECD /* MediumMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1F4AB41AB6CD6E0041955A /* MediumMenu.swift */; };
+		BF08F3E41AD8CEAF00A5FECD /* MediumMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4206C51AB6E56800A51136 /* MediumMenuItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +38,42 @@
 			remoteGlobalIDString = 6E08A6A71A87369000F6093C;
 			remoteInfo = "MediumMenu-Sample";
 		};
+		BF08F3CF1AD8CE0800A5FECD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E08A6A01A87369000F6093C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF08F3C21AD8CE0700A5FECD;
+			remoteInfo = MediumMenu;
+		};
+		BF08F3D11AD8CE0800A5FECD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E08A6A01A87369000F6093C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E08A6A71A87369000F6093C;
+			remoteInfo = "MediumMenu-Sample";
+		};
+		BF08F3D81AD8CE0800A5FECD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E08A6A01A87369000F6093C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF08F3C21AD8CE0700A5FECD;
+			remoteInfo = MediumMenu;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BF08F3DF1AD8CE0800A5FECD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF08F3DB1AD8CE0800A5FECD /* MediumMenu.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6E08A6A81A87369000F6093C /* MediumMenu-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MediumMenu-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +94,12 @@
 		6E08A6DB1A87374A00F6093C /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		6E1F4AB41AB6CD6E0041955A /* MediumMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediumMenu.swift; path = ../../MediumMenu/MediumMenu.swift; sourceTree = "<group>"; };
 		6E4206C51AB6E56800A51136 /* MediumMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediumMenuItem.swift; path = ../../MediumMenu/MediumMenuItem.swift; sourceTree = "<group>"; };
+		BF08F3C31AD8CE0700A5FECD /* MediumMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MediumMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF08F3C61AD8CE0700A5FECD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF08F3C71AD8CE0700A5FECD /* MediumMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediumMenu.h; sourceTree = "<group>"; };
+		BF08F3CD1AD8CE0700A5FECD /* MediumMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediumMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF08F3D51AD8CE0800A5FECD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF08F3D61AD8CE0800A5FECD /* MediumMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumMenuTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF08F3DA1AD8CE0800A5FECD /* MediumMenu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +115,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF08F3BF1AD8CE0700A5FECD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF08F3CA1AD8CE0700A5FECD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF08F3CE1AD8CE0800A5FECD /* MediumMenu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +141,8 @@
 			children = (
 				6E08A6AA1A87369000F6093C /* MediumMenu-Sample */,
 				6E08A6C01A87369000F6093C /* MediumMenu-SampleTests */,
+				BF08F3C41AD8CE0700A5FECD /* MediumMenu */,
+				BF08F3D31AD8CE0800A5FECD /* MediumMenuTests */,
 				6E08A6A91A87369000F6093C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,6 +152,8 @@
 			children = (
 				6E08A6A81A87369000F6093C /* MediumMenu-Sample.app */,
 				6E08A6BD1A87369000F6093C /* MediumMenu-SampleTests.xctest */,
+				BF08F3C31AD8CE0700A5FECD /* MediumMenu.framework */,
+				BF08F3CD1AD8CE0700A5FECD /* MediumMenuTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,7 +220,52 @@
 			name = MediumMenu;
 			sourceTree = "<group>";
 		};
+		BF08F3C41AD8CE0700A5FECD /* MediumMenu */ = {
+			isa = PBXGroup;
+			children = (
+				BF08F3C71AD8CE0700A5FECD /* MediumMenu.h */,
+				BF08F3C51AD8CE0700A5FECD /* Supporting Files */,
+			);
+			path = MediumMenu;
+			sourceTree = "<group>";
+		};
+		BF08F3C51AD8CE0700A5FECD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF08F3C61AD8CE0700A5FECD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF08F3D31AD8CE0800A5FECD /* MediumMenuTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF08F3D61AD8CE0800A5FECD /* MediumMenuTests.swift */,
+				BF08F3D41AD8CE0800A5FECD /* Supporting Files */,
+			);
+			path = MediumMenuTests;
+			sourceTree = "<group>";
+		};
+		BF08F3D41AD8CE0800A5FECD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF08F3D51AD8CE0800A5FECD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BF08F3C01AD8CE0700A5FECD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF08F3C81AD8CE0700A5FECD /* MediumMenu.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		6E08A6A71A87369000F6093C /* MediumMenu-Sample */ = {
@@ -162,10 +275,12 @@
 				6E08A6A41A87369000F6093C /* Sources */,
 				6E08A6A51A87369000F6093C /* Frameworks */,
 				6E08A6A61A87369000F6093C /* Resources */,
+				BF08F3DF1AD8CE0800A5FECD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BF08F3D91AD8CE0800A5FECD /* PBXTargetDependency */,
 			);
 			name = "MediumMenu-Sample";
 			productName = "MediumMenu-Sample";
@@ -190,6 +305,43 @@
 			productReference = 6E08A6BD1A87369000F6093C /* MediumMenu-SampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		BF08F3C21AD8CE0700A5FECD /* MediumMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF08F3DC1AD8CE0800A5FECD /* Build configuration list for PBXNativeTarget "MediumMenu" */;
+			buildPhases = (
+				BF08F3BE1AD8CE0700A5FECD /* Sources */,
+				BF08F3BF1AD8CE0700A5FECD /* Frameworks */,
+				BF08F3C01AD8CE0700A5FECD /* Headers */,
+				BF08F3C11AD8CE0700A5FECD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MediumMenu;
+			productName = MediumMenu;
+			productReference = BF08F3C31AD8CE0700A5FECD /* MediumMenu.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BF08F3CC1AD8CE0700A5FECD /* MediumMenuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF08F3E01AD8CE0800A5FECD /* Build configuration list for PBXNativeTarget "MediumMenuTests" */;
+			buildPhases = (
+				BF08F3C91AD8CE0700A5FECD /* Sources */,
+				BF08F3CA1AD8CE0700A5FECD /* Frameworks */,
+				BF08F3CB1AD8CE0700A5FECD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF08F3D01AD8CE0800A5FECD /* PBXTargetDependency */,
+				BF08F3D21AD8CE0800A5FECD /* PBXTargetDependency */,
+			);
+			name = MediumMenuTests;
+			productName = MediumMenuTests;
+			productReference = BF08F3CD1AD8CE0700A5FECD /* MediumMenuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -204,6 +356,13 @@
 					};
 					6E08A6BC1A87369000F6093C = {
 						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 6E08A6A71A87369000F6093C;
+					};
+					BF08F3C21AD8CE0700A5FECD = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					BF08F3CC1AD8CE0700A5FECD = {
+						CreatedOnToolsVersion = 6.3;
 						TestTargetID = 6E08A6A71A87369000F6093C;
 					};
 				};
@@ -223,6 +382,8 @@
 			targets = (
 				6E08A6A71A87369000F6093C /* MediumMenu-Sample */,
 				6E08A6BC1A87369000F6093C /* MediumMenu-SampleTests */,
+				BF08F3C21AD8CE0700A5FECD /* MediumMenu */,
+				BF08F3CC1AD8CE0700A5FECD /* MediumMenuTests */,
 			);
 		};
 /* End PBXProject section */
@@ -239,6 +400,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6E08A6BB1A87369000F6093C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF08F3C11AD8CE0700A5FECD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF08F3CB1AD8CE0700A5FECD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -273,6 +448,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BF08F3BE1AD8CE0700A5FECD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF08F3E31AD8CEAF00A5FECD /* MediumMenu.swift in Sources */,
+				BF08F3E41AD8CEAF00A5FECD /* MediumMenuItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF08F3C91AD8CE0700A5FECD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF08F3D71AD8CE0800A5FECD /* MediumMenuTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -280,6 +472,21 @@
 			isa = PBXTargetDependency;
 			target = 6E08A6A71A87369000F6093C /* MediumMenu-Sample */;
 			targetProxy = 6E08A6BE1A87369000F6093C /* PBXContainerItemProxy */;
+		};
+		BF08F3D01AD8CE0800A5FECD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF08F3C21AD8CE0700A5FECD /* MediumMenu */;
+			targetProxy = BF08F3CF1AD8CE0800A5FECD /* PBXContainerItemProxy */;
+		};
+		BF08F3D21AD8CE0800A5FECD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E08A6A71A87369000F6093C /* MediumMenu-Sample */;
+			targetProxy = BF08F3D11AD8CE0800A5FECD /* PBXContainerItemProxy */;
+		};
+		BF08F3D91AD8CE0800A5FECD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF08F3C21AD8CE0700A5FECD /* MediumMenu */;
+			targetProxy = BF08F3D81AD8CE0800A5FECD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -434,6 +641,94 @@
 			};
 			name = Release;
 		};
+		BF08F3DD1AD8CE0800A5FECD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MediumMenu/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BF08F3DE1AD8CE0800A5FECD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = MediumMenu/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BF08F3E11AD8CE0800A5FECD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MediumMenuTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediumMenu-Sample.app/MediumMenu-Sample";
+			};
+			name = Debug;
+		};
+		BF08F3E21AD8CE0800A5FECD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = MediumMenuTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediumMenu-Sample.app/MediumMenu-Sample";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -463,6 +758,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		BF08F3DC1AD8CE0800A5FECD /* Build configuration list for PBXNativeTarget "MediumMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF08F3DD1AD8CE0800A5FECD /* Debug */,
+				BF08F3DE1AD8CE0800A5FECD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BF08F3E01AD8CE0800A5FECD /* Build configuration list for PBXNativeTarget "MediumMenuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF08F3E11AD8CE0800A5FECD /* Debug */,
+				BF08F3E21AD8CE0800A5FECD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
