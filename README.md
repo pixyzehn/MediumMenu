@@ -3,7 +3,7 @@ MediumMenu
 
 Medium 1.8.168 menu in Swift. That is still one of my favorite menus because that is easy to use and looks beautiful.
 
-Inspired by [RBMenu](https://github.com/RoshanNindrai/RBMenu). I made that a reference and customized a fine point.
+Inspired by [RBMenu](https://github.com/RoshanNindrai/RBMenu). I made that a reference and customized a fine point.
 
 ## Demo
 
@@ -24,6 +24,21 @@ Then, run the following command:
 
 ```ruby
 pod install
+```
+
+Or Carthage is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate MediumMenu into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "pixyzehn/MediumMenu"
 ```
 
 Or add the MediumMenu (including MediumMenu.swift) folder into your project.
