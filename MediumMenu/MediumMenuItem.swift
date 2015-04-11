@@ -12,7 +12,7 @@ public class MediumMenuItem: NSObject {
     public var title: String?
     public var completion: completionHandler?
     public var menuButton: UIButton?
-    
+
     override public init() {
         super.init()
     }
