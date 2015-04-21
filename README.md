@@ -11,7 +11,9 @@ Inspired by [RBMenu](https://github.com/RoshanNindrai/RBMenu). I made that a ref
 
 ##Installation
 
-1. The easiest way to get started is to use [CocoaPods](http://cocoapods.org/). Add the following line to your Podfile:
+###Cocoapods
+
+The easiest way to get started is to use [CocoaPods](http://cocoapods.org/). Add the following line to your Podfile:
 
 ```ruby
 platform :ios, '8.0'
@@ -26,7 +28,9 @@ Then, run the following command:
 pod install
 ```
 
-Or Carthage is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
+###Carthage
+
+Carthage is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
 
 You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
 
@@ -40,12 +44,21 @@ To integrate MediumMenu into your Xcode project using Carthage, specify it in yo
 ```ogdl
 github "pixyzehn/MediumMenu"
 ```
+Run `carthage update`.
 
-Or add the MediumMenu (including MediumMenu.swift) folder into your project.
+```bash
+$ carthage update
+```
 
-2. Due to the lack of choice whether status bar is hidden or not,  Edit info.plist in your project.
+###Other
 
-3. Add "Status bar is initially hidden" and "View controller-based status bar appearance" in info.plist as key. Eash value is "YES" and "NO".
+Add the MediumMenu (including MediumMenu.swift) folder into your project.
+
+---
+
+Due to the lack of choice whether status bar is hidden or not,  Edit info.plist in your project.
+
+Add "Status bar is initially hidden" and "View controller-based status bar appearance" in info.plist as key. Eash value is "YES" and "NO".
 
 In the rest of the details, refer to MediumMenu-Sample project.
 
