@@ -766,6 +766,7 @@
 				BF08F3DE1AD8CE0800A5FECD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF08F3E01AD8CE0800A5FECD /* Build configuration list for PBXNativeTarget "MediumMenuTests" */ = {
 			isa = XCConfigurationList;
@@ -774,6 +775,7 @@
 				BF08F3E21AD8CE0800A5FECD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

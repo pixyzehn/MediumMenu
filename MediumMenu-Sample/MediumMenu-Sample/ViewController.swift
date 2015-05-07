@@ -18,4 +18,5 @@ class ViewController: UIViewController {
         icon.tintColor = UIColor.blackColor()
         navigationItem.leftBarButtonItem = icon
     }
+    
 }
