@@ -50,6 +50,12 @@ class NavigationController: UINavigationController {
         })
 
         let menu = MediumMenu(Items: [item1, item2, item3, item4, item5], andTextAlignment: .Left, forViewController: self)
+
+        /// You can custmize each parameter.
+        /*
+        let menu = MediumMenu(Items: [item1, item2, item3, item4, item5], textColor: UIColor.redColor(), hightLightTextColor: UIColor.blackColor(), backGroundColor: UIColor.grayColor(), andTextAlignment: .Center, forViewController: self)
+        */
+        
         showMediumMenu = {
             menu.showMenu()
         }
