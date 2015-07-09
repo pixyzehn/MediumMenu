@@ -8,14 +8,14 @@
 
 import UIKit
 
-private let menuItemDefaultFontname: String       = "HelveticaNeue-Light"
-private let menuItemDefaultFontsize: CGFloat      = 28
-private let menuItemDefaultHeight: CGFloat        = 466
-private let mediumWhiteColor: UIColor             = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1)
-private let mediumBlackColor: UIColor             = UIColor(red:0.05, green:0.05, blue:0.05, alpha:1)
-private let mediumGlayColor: UIColor              = UIColor(red:0.57, green:0.57, blue:0.57, alpha:1)
-private let startIndex :Int                       = 1
-private let panDefaultGestureEnable: Bool         = true
+private let menuItemDefaultFontname: String  = "HelveticaNeue-Light"
+private let menuItemDefaultFontsize: CGFloat = 28
+private let menuItemDefaultHeight: CGFloat   = 466
+private let mediumWhiteColor: UIColor        = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1)
+private let mediumBlackColor: UIColor        = UIColor(red:0.05, green:0.05, blue:0.05, alpha:1)
+private let mediumGlayColor: UIColor         = UIColor(red:0.57, green:0.57, blue:0.57, alpha:1)
+private let startIndex :Int                  = 1
+private let panDefaultGestureEnable: Bool    = true
 
 public typealias completionHandler = Bool -> ()
 
@@ -31,18 +31,18 @@ public enum Alignment {
     case Center
 }
 
-public class MediumMenu: UIView, UITableViewDataSource, UITableViewDelegate {
+public class MediumMenu: UIView {
     
-    public var currentMenuState: State?
+    public var currentMenuState: State = .Closed
     public var highLighedIndex: Int?
     
-    public var heightForHeaderInSection: CGFloat     = 30
-    public var heightForRowAtIndexPath: CGFloat      = 57
-    public var velocityTreshold: CGFloat             = 1000
-    public var autoCloseVelocity: CGFloat            = 1200
-    public var cellIdentifier: String                = "menucell"
-    public var menuBounceOffset: CGFloat             = 0
-    public var panGestureEnable: Bool                = true
+    public var heightForHeaderInSection: CGFloat = 30
+    public var heightForRowAtIndexPath: CGFloat  = 57
+    public var velocityTreshold: CGFloat         = 1000
+    public var autoCloseVelocity: CGFloat        = 1200
+    public var cellIdentifier: String            = "menucell"
+    public var menuBounceOffset: CGFloat         = 0
+    public var panGestureEnable: Bool            = true
  
     private var _height: CGFloat?
     public var height: CGFloat? {
@@ -160,20 +160,15 @@ public class MediumMenu: UIView, UITableViewDataSource, UITableViewDelegate {
         self.contentController = viewController
     }
     
-    public class var sharedInstance: MediumMenu {
-        struct Static {
-            static let instance: MediumMenu = MediumMenu()
-        }
-        return Static.instance
-    }
+    public static let sharedInstance = MediumMenu()
     
     public override func layoutSubviews() {
-        self.currentMenuState = .Closed
-        self.frame = CGRectMake(0, 0, CGRectGetWidth(UIScreen.mainScreen().bounds), self.height!);
-        self.contentController?.view.frame = CGRectMake(0, 0, CGRectGetWidth(UIScreen.mainScreen().bounds), CGRectGetHeight(UIScreen.mainScreen().bounds));
-        self.setShadowProperties()
-        self.menuContentTable = UITableView(frame: self.frame)
-        self.menuContentTable?.backgroundColor = self.backgroundColor
+        currentMenuState = .Closed
+        frame = CGRectMake(0, 0, CGRectGetWidth(UIScreen.mainScreen().bounds), self.height!);
+        contentController?.view.frame = CGRectMake(0, 0, CGRectGetWidth(UIScreen.mainScreen().bounds), CGRectGetHeight(UIScreen.mainScreen().bounds));
+        setShadowProperties()
+        menuContentTable = UITableView(frame: self.frame)
+        menuContentTable?.backgroundColor = backgroundColor
     }
     
     private func setShadowProperties() {
@@ -306,8 +301,37 @@ public class MediumMenu: UIView, UITableViewDataSource, UITableViewDelegate {
         })
     }
     
-    //MARK:UITableViewDelegates
+    //MARK:Custom Function
+    
+    public func setHighLighedRow(row: Int) {
+        highLighedIndex = row
+        menuContentTable?.reloadData()
+        let selectedItem: MediumMenuItem = menuItems[row - startIndex]
+    }
+    
+    public func setHighLighedRowAtIndexPath(indexPath: NSIndexPath) {
+        highLighedIndex = indexPath.row
+        menuContentTable?.reloadData()
+        let selectedItem: MediumMenuItem = menuItems[indexPath.row - startIndex]
+    }
+    
+    public func setMenuTitleAlligmentForCell(cell: UITableViewCell) {
+        if let tAlignment = titleAlignment {
+            switch tAlignment {
+            case .Left:
+                cell.textLabel?.textAlignment = .Left
+            case .Center:
+                cell.textLabel?.textAlignment = .Center
+            case .Right:
+                cell.textLabel?.textAlignment = .Right
+            default:
+                break
+            }
+        }
+    }
+}
 
+extension MediumMenu: UITableViewDataSource, UITableViewDelegate {
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuItems.count + 2 * startIndex
     }
@@ -366,34 +390,5 @@ public class MediumMenu: UIView, UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return heightForRowAtIndexPath
-    }
-    
-    //MARK:Custom Function
-    
-    public func setHighLighedRow(row: Int) {
-        highLighedIndex = row
-        menuContentTable?.reloadData()
-        let selectedItem: MediumMenuItem = menuItems[row - startIndex]
-    }
-    
-    public func setHighLighedRowAtIndexPath(indexPath: NSIndexPath) {
-        highLighedIndex = indexPath.row
-        menuContentTable?.reloadData()
-        let selectedItem: MediumMenuItem = menuItems[indexPath.row - startIndex]
-    }
-    
-    public func setMenuTitleAlligmentForCell(cell: UITableViewCell) {
-        if let tAlignment = titleAlignment {
-            switch tAlignment {
-            case .Left:
-                cell.textLabel?.textAlignment = .Left
-            case .Center:
-                cell.textLabel?.textAlignment = .Center
-            case .Right:
-                cell.textLabel?.textAlignment = .Right
-            default:
-                break
-            }
-        }
     }
 }

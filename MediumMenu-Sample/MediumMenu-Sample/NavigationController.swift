@@ -68,7 +68,7 @@ class NavigationController: UINavigationController {
 
 extension UINavigationBar {
     public override func sizeThatFits(size: CGSize) -> CGSize {
-        var newsize: CGSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width, 60)
+        let newsize: CGSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width, 60)
         return newsize
     }
 }

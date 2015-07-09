@@ -8,8 +8,7 @@
 
 import UIKit
 
-class SignoutViewController: ViewController {
-    
+class SignoutViewController: ViewController { 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -22,5 +21,4 @@ class SignoutViewController: ViewController {
         super.viewDidLoad()
         self.title = "Sign out"
     }
-    
 }

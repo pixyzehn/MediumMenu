@@ -9,7 +9,6 @@
 import UIKit
 
 class BookmarksViewController: ViewController {
-    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -22,5 +21,4 @@ class BookmarksViewController: ViewController {
         super.viewDidLoad()
         self.title = "Bookmarks"
     }
-    
 }

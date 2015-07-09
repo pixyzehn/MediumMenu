@@ -8,8 +8,7 @@
 
 import UIKit
 
-class TopStoriesViewController: ViewController {
-    
+class TopStoriesViewController: ViewController { 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -21,6 +20,5 @@ class TopStoriesViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Top stories"
-    }
-    
+    }
 }
