@@ -8,30 +8,29 @@
 
 import UIKit
 
-private let menuItemDefaultFontname: String  = "HelveticaNeue-Light"
-private let menuItemDefaultFontsize: CGFloat = 28
-private let menuItemDefaultHeight: CGFloat   = 466
-private let mediumWhiteColor: UIColor        = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1)
-private let mediumBlackColor: UIColor        = UIColor(red:0.05, green:0.05, blue:0.05, alpha:1)
-private let mediumGlayColor: UIColor         = UIColor(red:0.57, green:0.57, blue:0.57, alpha:1)
-private let startIndex :Int                  = 1
-private let panDefaultGestureEnable: Bool    = true
-
-public typealias completionHandler = Bool -> ()
-
-public enum State {
-    case Shown
-    case Closed
-    case Displaying
-}
-
-public enum Alignment {
-    case Left
-    case Right
-    case Center
-}
+public typealias completionHandler = () -> ()
 
 public class MediumMenu: UIView {
+
+    public enum State {
+        case Shown
+        case Closed
+        case Displaying
+    }
+    
+    public enum Alignment {
+        case Left
+        case Right
+        case Center
+    }
+
+    private var menuItemFontname: String  = "HelveticaNeue-Light"
+    private var menuItemFontsize: CGFloat = 28
+    private var menuItemHeight: CGFloat   = 466
+    private let mediumWhiteColor: UIColor = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1)
+    private let mediumBlackColor: UIColor = UIColor(red:0.05, green:0.05, blue:0.05, alpha:1)
+    private let mediumGlayColor: UIColor  = UIColor(red:0.57, green:0.57, blue:0.57, alpha:1)
+    private let startIndex :Int           = 1
     
     public var currentMenuState: State = .Closed
     public var highLighedIndex: Int?
@@ -125,39 +124,21 @@ public class MediumMenu: UIView {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         self.highLighedIndex = startIndex
-        self.currentMenuState = .Closed
-        self.titleFont = UIFont(name: menuItemDefaultFontname, size: menuItemDefaultFontsize)
-        self.height = menuItemDefaultHeight
+        self.titleFont = UIFont(name: menuItemFontname, size: menuItemFontsize)
+        self.height = menuItemHeight
     }
 
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
-    public convenience init(Items menuItems: [MediumMenuItem], andTextAlignment titleAlignment: Alignment, forViewController viewController: UIViewController) {
-        self.init(Items: menuItems,
-              textColor: mediumGlayColor,
-    hightLightTextColor: mediumWhiteColor,
-        backGroundColor: mediumBlackColor,
-       andTextAlignment: titleAlignment,
-      forViewController: viewController)
-    }
     
-    public convenience init(Items menuItems: [MediumMenuItem],
-                                  textColor: UIColor,
-                        hightLightTextColor: UIColor,
-                            backGroundColor: UIColor,
-            andTextAlignment titleAlignment: Alignment,
-           forViewController viewController: UIViewController) {
+    public convenience init(_ menuItems: [MediumMenuItem], titleAlignment: Alignment, forViewController: UIViewController) {
         self.init()
         self.frame = CGRectMake(0, 0, CGRectGetWidth(UIScreen.mainScreen().bounds), self.height!)
         self.menuContentTable = UITableView(frame: self.frame)
         self.menuItems = menuItems
         self.titleAlignment = titleAlignment
-        self.textColor = textColor
-        self.highLightTextColor = hightLightTextColor
-        self.backgroundColor = backGroundColor
-        self.contentController = viewController
+        self.contentController = forViewController
     }
     
     public static let sharedInstance = MediumMenu()
@@ -193,7 +174,7 @@ public class MediumMenu: UIView {
     
     public func showMenu() {
         if currentMenuState == .Shown || currentMenuState == .Displaying {
-            animateMenuClosingWithCompletion(nil)
+            animateMenuClosingWithCompletion()
         } else {
             currentMenuState = .Displaying
             animateMenuOpening()
@@ -239,7 +220,7 @@ public class MediumMenu: UIView {
     public func animateMenuOpening() {
         showStatusBar()
         if currentMenuState != .Shown {
-            if let x = self.contentController?.view.center.x {
+            if let x = contentController?.view.center.x {
                 UIView.animateWithDuration(0.2, animations: {[unowned self]() -> Void in
                     self.contentController?.view.center = CGPointMake(x, UIScreen.mainScreen().bounds.size.height/2 + self.height!)
                 }, completion: {[unowned self](finished: Bool) -> Void in
@@ -253,9 +234,9 @@ public class MediumMenu: UIView {
         }
     }
     
-    public func animateMenuClosingWithCompletion(completion: completionHandler?) {
+    public func animateMenuClosingWithCompletion(completion: completionHandler) {
         dismissStatusBar()
-        if let center = self.contentController?.view.center {
+        if let center = contentController?.view.center {
             UIView.animateWithDuration(0.2, animations: {[unowned self]() -> Void in
                 self.contentController?.view.center = CGPointMake(center.x, center.y + menuBounceOffset)
             }, completion: {[unowned self](finished: Bool) -> Void in
@@ -264,9 +245,7 @@ public class MediumMenu: UIView {
                 }, completion: {(finished: Bool) -> Void in
                     if finished {
                         self.currentMenuState = .Closed
-                        if completion != nil {
-                            completion!(finished)
-                        }
+                        completion()
                     }
                 })
             })
@@ -375,7 +354,7 @@ extension MediumMenu: UITableViewDataSource, UITableViewDelegate {
         highLighedIndex = indexPath.row
         menuContentTable?.reloadData()
         let selectedItem: MediumMenuItem = menuItems[indexPath.row - startIndex]
-        animateMenuClosingWithCompletion(selectedItem.completion)
+        animateMenuClosingWithCompletion(selectedItem.completion!)
     }
     
     public func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

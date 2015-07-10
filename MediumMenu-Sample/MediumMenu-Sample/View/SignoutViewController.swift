@@ -19,6 +19,5 @@ class SignoutViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Sign out"
     }
 }

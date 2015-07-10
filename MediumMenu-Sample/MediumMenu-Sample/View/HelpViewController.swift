@@ -19,6 +19,5 @@ class HelpViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Help"
     }
 }

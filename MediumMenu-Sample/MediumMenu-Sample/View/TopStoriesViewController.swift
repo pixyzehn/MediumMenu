@@ -19,6 +19,5 @@ class TopStoriesViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Top stories"
-    }
+    }
 }

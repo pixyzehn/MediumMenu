@@ -19,6 +19,5 @@ class BookmarksViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Bookmarks"
     }
 }
