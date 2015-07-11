@@ -30,17 +30,23 @@ public class MediumMenu: UIView {
         static let mediumGlayColor = UIColor(red:0.57, green:0.57, blue:0.57, alpha:1)
     }
 
+    // Fixed value
+    private var currentMenuState: State = .Closed
+    private var startIndex = 1
+
+    // Optional value
     public var heightForHeaderInSection: CGFloat = 30
     public var heightForRowAtIndexPath: CGFloat  = 57
     public var velocityTreshold: CGFloat         = 1000
-    public var autoCloseVelocity: CGFloat        = 1200
-    public var menuBounceOffset: CGFloat         = 0
+    public var bounceOffset: CGFloat             = 0
 
-    public var currentMenuState: State = .Closed
-    public var startIndex: Int = 1
-    public var highLighedIndex: Int = 1
-    public var cellIdentifier: String            = "menucell"
-    public var panGestureEnable: Bool            = true
+    public var highLighedIndex = 1 {
+        didSet {
+            menuContentTable?.reloadData()
+        }
+    }
+    public var cellIdentifier = "menucell"
+    public var panGestureEnable = true
 
     public var textColor: UIColor?
     public var highLightTextColor: UIColor?
@@ -49,30 +55,21 @@ public class MediumMenu: UIView {
 
     public var menuItems: [MediumMenuItem] = [MediumMenuItem]()
 
-    private var _height: CGFloat?
     public var height: CGFloat? {
-        get {
-            return _height
-        }
-        set {
-            var menuFrame: CGRect = frame
+        willSet {
+            var menuFrame = frame
             menuFrame.size.height = newValue!
             menuContentTable?.frame = menuFrame
-            _height = newValue
+            self.height = newValue
         }
     }
 
-    private var _backgroundColor: UIColor?
     override public var backgroundColor: UIColor? {
-        get {
-            return _backgroundColor
-        }
-        set {
-            _backgroundColor = newValue
+        willSet {
             menuContentTable?.backgroundColor = newValue
         }
     }
-    
+
     private var _menuContentTable: UITableView?
     public var menuContentTable: UITableView? {
         get {
@@ -83,31 +80,25 @@ public class MediumMenu: UIView {
             newValue?.dataSource = self
             newValue?.showsVerticalScrollIndicator = false
             newValue?.separatorColor = UIColor.clearColor()
-            newValue?.allowsMultipleSelection = false
-            _menuContentTable = newValue
-            addSubview(_menuContentTable!)
+            self._menuContentTable = newValue!
+            addSubview(self._menuContentTable!)
         }
     }
 
     private var _contentController: UIViewController?
     public var contentController: UIViewController? {
         get {
-            return _contentController
+            return self._contentController
         }
         set {
-            if let value = newValue?.navigationController {
-                _contentController = value.navigationController
-            } else {
-                _contentController = newValue
-            }
-            let pan: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: "didPan:")
-            _contentController?.view.addGestureRecognizer(pan)
+            self._contentController = newValue
+            let pan = UIPanGestureRecognizer(target: self, action: "didPan:")
+            self._contentController?.view.addGestureRecognizer(pan)
             setShadowProperties()
-            _contentController?.view.autoresizingMask = UIViewAutoresizing.None
             let menuController: UIViewController = UIViewController()
             menuController.view = self
             UIApplication.sharedApplication().delegate?.window??.rootViewController = menuController
-            UIApplication.sharedApplication().delegate?.window??.addSubview(_contentController!.view!)
+            UIApplication.sharedApplication().delegate?.window??.addSubview(self._contentController!.view)
         }
     }
 
@@ -146,11 +137,11 @@ public class MediumMenu: UIView {
     }
     
     private func setShadowProperties() {
-        _contentController?.view.layer.shadowOffset = CGSizeMake(0, 1)
-        _contentController?.view.layer.shadowRadius = 4.0
-        _contentController?.view.layer.shadowColor = UIColor.lightGrayColor().CGColor
-        _contentController?.view.layer.shadowOpacity = 0.4
-        _contentController?.view.layer.shadowPath = UIBezierPath(rect: _contentController!.view.bounds).CGPath
+        contentController?.view.layer.shadowOffset = CGSizeMake(0, 1)
+        contentController?.view.layer.shadowRadius = 4.0
+        contentController?.view.layer.shadowColor = UIColor.lightGrayColor().CGColor
+        contentController?.view.layer.shadowOpacity = 0.4
+        contentController?.view.layer.shadowPath = UIBezierPath(rect: contentController!.view.bounds).CGPath
     }
     
     //MARK:StatusBar
@@ -167,7 +158,7 @@ public class MediumMenu: UIView {
     
     public func showMenu() {
         if currentMenuState == .Shown || currentMenuState == .Displaying {
-            animateMenuClosingWithCompletion(nil)
+            animateMenuClosingWithCompletion({})
         } else {
             currentMenuState = .Displaying
             animateMenuOpening()
@@ -175,34 +166,34 @@ public class MediumMenu: UIView {
     }
     
     public func didPan(pan: UIPanGestureRecognizer) {
-        if panGestureEnable {
-            if var viewCenter = pan.view?.center {
-                if pan.state == .Began || pan.state == .Changed {
-                    let translation: CGPoint = pan.translationInView(pan.view!.superview!)
-                    
-                    if viewCenter.y >= UIScreen.mainScreen().bounds.size.height/2 && viewCenter.y <= (UIScreen.mainScreen().bounds.size.height/2 + height!) - menuBounceOffset {
-                        currentMenuState = .Displaying
-                        viewCenter.y = abs(viewCenter.y + translation.y)
-                        if viewCenter.y >= UIScreen.mainScreen().bounds.size.height/2 && viewCenter.y <= (UIScreen.mainScreen().bounds.size.height/2 + height!) - menuBounceOffset {
-                            contentController?.view.center = viewCenter
-                        }
-                        pan.setTranslation(CGPointZero, inView: contentController?.view)
+        if !panGestureEnable {
+            return
+        }
+
+        if var viewCenter = pan.view?.center {
+            if pan.state == .Began || pan.state == .Changed {
+                let translation = pan.translationInView(pan.view!.superview!)
+                if viewCenter.y >= UIScreen.mainScreen().bounds.size.height/2 && viewCenter.y <= (UIScreen.mainScreen().bounds.size.height/2 + height!) - bounceOffset {
+                    currentMenuState = .Displaying
+                    viewCenter.y = abs(viewCenter.y + translation.y)
+                    if viewCenter.y >= UIScreen.mainScreen().bounds.size.height/2 && viewCenter.y <= (UIScreen.mainScreen().bounds.size.height/2 + height!) - bounceOffset {
+                        contentController?.view.center = viewCenter
                     }
-                } else if pan.state == .Ended {
-                    let velocity: CGPoint = pan.velocityInView(contentController?.view.superview)
-                    
-                    if velocity.y > velocityTreshold {
-                        openMenuFromCenterWithVelocity(velocity.y)
-                        return
-                    } else if velocity.y < -velocityTreshold {
-                        closeMenuFromCenterWithVelocity(abs(velocity.y))
-                        return
-                    }
-                    if viewCenter.y <= contentController?.view.frame.size.height {
-                        animateMenuClosingWithCompletion(nil)
-                    } else {
-                        animateMenuOpening()
-                    }
+                    pan.setTranslation(CGPointZero, inView: contentController?.view)
+                }
+            } else if pan.state == .Ended {
+                let velocity = pan.velocityInView(contentController?.view.superview)
+                if velocity.y > velocityTreshold {
+                    openMenuFromCenterWithVelocity(velocity.y)
+                    return
+                } else if velocity.y < -velocityTreshold {
+                    closeMenuFromCenterWithVelocity(abs(velocity.y))
+                    return
+                }
+                if viewCenter.y <= contentController?.view.frame.size.height {
+                    animateMenuClosingWithCompletion({})
+                } else {
+                    animateMenuOpening()
                 }
             }
         }
@@ -211,14 +202,14 @@ public class MediumMenu: UIView {
     //MARK:Animation and menu operations
 
     public func animateMenuOpening() {
-        showStatusBar()
         if currentMenuState != .Shown {
+            showStatusBar()
             if let x = contentController?.view.center.x {
                 UIView.animateWithDuration(0.2, animations: {[unowned self]() -> Void in
                     self.contentController?.view.center = CGPointMake(x, UIScreen.mainScreen().bounds.size.height/2 + self.height!)
                 }, completion: {[unowned self](finished: Bool) -> Void in
                     UIView.animateWithDuration(0.2, animations: {[unowned self]() -> Void in
-                        self.contentController?.view.center = CGPointMake(x, UIScreen.mainScreen().bounds.size.height/2 + self.height! - menuBounceOffset)
+                        self.contentController?.view.center = CGPointMake(x, UIScreen.mainScreen().bounds.size.height/2 + self.height! - bounceOffset)
                     }, completion: {(finished: Bool) -> Void in
                         self.currentMenuState = .Shown
                     })
@@ -227,21 +218,17 @@ public class MediumMenu: UIView {
         }
     }
     
-    public func animateMenuClosingWithCompletion(completion: completionHandler?) {
+    public func animateMenuClosingWithCompletion(completion: completionHandler) {
         dismissStatusBar()
         if let center = contentController?.view.center {
             UIView.animateWithDuration(0.2, animations: {[unowned self]() -> Void in
-                self.contentController?.view.center = CGPointMake(center.x, center.y + menuBounceOffset)
+                self.contentController?.view.center = CGPointMake(center.x, center.y + bounceOffset)
             }, completion: {[unowned self](finished: Bool) -> Void in
                 UIView.animateWithDuration(0.2, animations: {[unowned self]() -> Void in
                     self.contentController?.view.center = CGPointMake(center.x, UIScreen.mainScreen().bounds.size.height/2)
                 }, completion: {(finished: Bool) -> Void in
-                    if finished {
-                        self.currentMenuState = .Closed
-                        if let com = completion {
-                            completion!()
-                        }
-                    }
+                    self.currentMenuState = .Closed
+                    completion()
                 })
             })
         }
@@ -249,9 +236,9 @@ public class MediumMenu: UIView {
 
     public func openMenuFromCenterWithVelocity(velocity: CGFloat) {
         showStatusBar()
-        let viewCenterY: CGFloat = UIScreen.mainScreen().bounds.size.height/2 + height! - menuBounceOffset
+        let viewCenterY = UIScreen.mainScreen().bounds.size.height/2 + height! - bounceOffset
         currentMenuState = .Displaying
-        let duration: NSTimeInterval = Double((viewCenterY - contentController!.view.center.y) / velocity)
+        let duration = Double((viewCenterY - contentController!.view.center.y) / velocity)
         UIView.animateWithDuration(duration, animations: {[unowned self]() -> Void in
             if let center = self.contentController?.view.center {
                 self.contentController?.view.center = CGPointMake(center.x, viewCenterY)
@@ -263,9 +250,9 @@ public class MediumMenu: UIView {
 
     public func closeMenuFromCenterWithVelocity(velocity: CGFloat) {
         dismissStatusBar()
-        let viewCenterY: CGFloat = UIScreen.mainScreen().bounds.size.height/2
+        let viewCenterY = UIScreen.mainScreen().bounds.size.height/2
         currentMenuState = .Displaying
-        let duration: NSTimeInterval = Double((contentController!.view.center.y - viewCenterY) / velocity)
+        let duration = Double((contentController!.view.center.y - viewCenterY) / velocity)
         UIView.animateWithDuration(duration, animations: {[unowned self]() -> Void in
             if let center = self.contentController?.view.center {
                 self.contentController?.view.center = CGPointMake(center.x, UIScreen.mainScreen().bounds.size.height/2)
@@ -279,14 +266,10 @@ public class MediumMenu: UIView {
     
     public func setHighLighedRow(row: Int) {
         highLighedIndex = row
-        menuContentTable?.reloadData()
-        let selectedItem: MediumMenuItem = menuItems[row - startIndex]
     }
     
     public func setHighLighedRowAtIndexPath(indexPath: NSIndexPath) {
         highLighedIndex = indexPath.row
-        menuContentTable?.reloadData()
-        let selectedItem: MediumMenuItem = menuItems[indexPath.row - startIndex]
     }
     
     public func setMenuTitleAlligmentForCell(cell: UITableViewCell) {
@@ -312,13 +295,13 @@ extension MediumMenu: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var menuCell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? UITableViewCell
-        var mediumMenuItem: MediumMenuItem?
-        
+        let mediumMenuItem: MediumMenuItem?
+
         if menuCell == nil {
-            menuCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: cellIdentifier)
+            menuCell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
             setMenuTitleAlligmentForCell(menuCell!)
             menuCell?.backgroundColor = UIColor.clearColor()
-            menuCell?.selectionStyle = UITableViewCellSelectionStyle.None
+            menuCell?.selectionStyle = .None
             menuCell?.textLabel?.textColor = textColor
             menuCell?.textLabel?.font = titleFont
         }
@@ -347,13 +330,12 @@ extension MediumMenu: UITableViewDataSource, UITableViewDelegate {
         }
         dismissStatusBar()
         highLighedIndex = indexPath.row
-        menuContentTable?.reloadData()
         let selectedItem: MediumMenuItem = menuItems[indexPath.row - startIndex]
         animateMenuClosingWithCompletion(selectedItem.completion!)
     }
     
     public func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view: UIView = UIView(frame: CGRectMake(0, 0, frame.width, 30))
+        let view = UIView(frame: CGRectMake(0, 0, frame.width, 30))
         view.backgroundColor = UIColor.clearColor()
         return view
     }
