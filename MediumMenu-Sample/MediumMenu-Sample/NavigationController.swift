@@ -20,42 +20,38 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
         
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeViewController: HomeViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
         setViewControllers([homeViewController], animated: false)
 
-        let item1: MediumMenuItem = MediumMenuItem(menuItemWithTitle: "Home", withCompletionHandler: {(finished: Bool) -> () in
-            let homeViewController: HomeViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
+        let item1 = MediumMenuItem(title: "Home", completionHandler: {
+            let homeViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
             self.setViewControllers([homeViewController], animated: false)
-        } )
+        })
         
-        let item2: MediumMenuItem = MediumMenuItem(menuItemWithTitle: "Top stories", withCompletionHandler: {(finished: Bool) -> () in
-            let topStoriesViewController: TopStoriesViewController = storyboard.instantiateViewControllerWithIdentifier("Top") as! TopStoriesViewController
+        let item2 = MediumMenuItem(title: "Top stories", completionHandler: {
+            let topStoriesViewController = storyboard.instantiateViewControllerWithIdentifier("Top") as! TopStoriesViewController
             self.setViewControllers([topStoriesViewController], animated: false)
         })
         
-        let item3: MediumMenuItem = MediumMenuItem(menuItemWithTitle: "Bookmarks", withCompletionHandler: {(finished: Bool) -> () in
-            let bookMarksViewController: BookmarksViewController = storyboard.instantiateViewControllerWithIdentifier("Bookmarks") as! BookmarksViewController
+        let item3 = MediumMenuItem(title: "Bookmarks", completionHandler: {
+            let bookMarksViewController = storyboard.instantiateViewControllerWithIdentifier("Bookmarks") as! BookmarksViewController
             self.setViewControllers([bookMarksViewController], animated: false)
         })
 
-        let item4: MediumMenuItem = MediumMenuItem(menuItemWithTitle: "Help", withCompletionHandler: {(finished: Bool) -> () in
-            let helpViewController: HelpViewController = storyboard.instantiateViewControllerWithIdentifier("Help") as! HelpViewController
+        let item4 = MediumMenuItem(title: "Help", completionHandler: {
+            let helpViewController = storyboard.instantiateViewControllerWithIdentifier("Help") as! HelpViewController
             self.setViewControllers([helpViewController], animated: false)
         })
         
-        let item5: MediumMenuItem = MediumMenuItem(menuItemWithTitle: "Sign out", withCompletionHandler: {(finished: Bool) -> () in
-            let signoutViewController: SignoutViewController = storyboard.instantiateViewControllerWithIdentifier("Signout") as! SignoutViewController
+        let item5 = MediumMenuItem(title: "Sign out", completionHandler: {
+            let signoutViewController = storyboard.instantiateViewControllerWithIdentifier("Signout") as! SignoutViewController
             self.setViewControllers([signoutViewController], animated: false)
         })
 
-        let menu = MediumMenu(Items: [item1, item2, item3, item4, item5], andTextAlignment: .Left, forViewController: self)
+        let menu = MediumMenu([item1, item2, item3, item4, item5], titleAlignment: .Left, forViewController: self)
 
-        /// You can custmize each parameter.
-        /*
-        let menu = MediumMenu(Items: [item1, item2, item3, item4, item5], textColor: UIColor.redColor(), hightLightTextColor: UIColor.blackColor(), backGroundColor: UIColor.grayColor(), andTextAlignment: .Center, forViewController: self)
-        */
-        
         showMediumMenu = {
             menu.showMenu()
         }
@@ -68,7 +64,7 @@ class NavigationController: UINavigationController {
 
 extension UINavigationBar {
     public override func sizeThatFits(size: CGSize) -> CGSize {
-        var newsize: CGSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width, 60)
+        let newsize = CGSizeMake(UIScreen.mainScreen().bounds.size.width, 60)
         return newsize
     }
 }

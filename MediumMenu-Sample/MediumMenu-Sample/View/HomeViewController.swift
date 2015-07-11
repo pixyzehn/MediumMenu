@@ -9,7 +9,6 @@
 import UIKit
 
 class HomeViewController: ViewController {
-
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -20,7 +19,5 @@ class HomeViewController: ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Home"
     }
-
 }
