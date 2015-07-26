@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: ViewController {
+class HomeViewController: BaseViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }

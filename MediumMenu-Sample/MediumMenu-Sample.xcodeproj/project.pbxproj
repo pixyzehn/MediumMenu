@@ -13,7 +13,7 @@
 		6E08A6C41A87369000F6093C /* MediumMenu_SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6C31A87369000F6093C /* MediumMenu_SampleTests.swift */; };
 		6E1F4AB51AB6CD6E0041955A /* MediumMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1F4AB41AB6CD6E0041955A /* MediumMenu.swift */; };
 		6E4206BB1AB6E34600A51136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6AD1A87369000F6093C /* AppDelegate.swift */; };
-		6E4206BC1AB6E34600A51136 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6AF1A87369000F6093C /* ViewController.swift */; };
+		6E4206BC1AB6E34600A51136 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6AF1A87369000F6093C /* BaseViewController.swift */; };
 		6E4206BD1AB6E34600A51136 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6DB1A87374A00F6093C /* NavigationController.swift */; };
 		6E4206BE1AB6E35000A51136 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6D31A87370000F6093C /* HomeViewController.swift */; };
 		6E4206BF1AB6E35000A51136 /* TopStoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6D51A87370000F6093C /* TopStoriesViewController.swift */; };
@@ -79,7 +79,7 @@
 		6E08A6A81A87369000F6093C /* MediumMenu-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MediumMenu-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E08A6AC1A87369000F6093C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E08A6AD1A87369000F6093C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6E08A6AF1A87369000F6093C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6E08A6AF1A87369000F6093C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		6E08A6B21A87369000F6093C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E08A6B41A87369000F6093C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6E08A6B71A87369000F6093C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -162,13 +162,12 @@
 			isa = PBXGroup;
 			children = (
 				6E1F4AB61AB6CD780041955A /* MediumMenu */,
-				6E08A6D01A87370000F6093C /* View */,
+				6E08A6D01A87370000F6093C /* Controller */,
 				6E08A6AD1A87369000F6093C /* AppDelegate.swift */,
-				6E08A6AF1A87369000F6093C /* ViewController.swift */,
+				6E08A6AF1A87369000F6093C /* BaseViewController.swift */,
 				6E08A6DB1A87374A00F6093C /* NavigationController.swift */,
 				6E08A6B11A87369000F6093C /* Main.storyboard */,
 				6E08A6B41A87369000F6093C /* Images.xcassets */,
-				6E08A6B61A87369000F6093C /* LaunchScreen.xib */,
 				6E08A6AB1A87369000F6093C /* Supporting Files */,
 			);
 			path = "MediumMenu-Sample";
@@ -177,6 +176,7 @@
 		6E08A6AB1A87369000F6093C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E08A6B61A87369000F6093C /* LaunchScreen.xib */,
 				6E08A6AC1A87369000F6093C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -199,7 +199,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6E08A6D01A87370000F6093C /* View */ = {
+		6E08A6D01A87370000F6093C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				6E08A6D31A87370000F6093C /* HomeViewController.swift */,
@@ -208,6 +208,7 @@
 				6E08A6D21A87370000F6093C /* HelpViewController.swift */,
 				6E08A6D41A87370000F6093C /* SignoutViewController.swift */,
 			);
+			name = Controller;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -435,7 +436,7 @@
 				6E4206C11AB6E35000A51136 /* HelpViewController.swift in Sources */,
 				6E4206C21AB6E35000A51136 /* SignoutViewController.swift in Sources */,
 				6E4206BB1AB6E34600A51136 /* AppDelegate.swift in Sources */,
-				6E4206BC1AB6E34600A51136 /* ViewController.swift in Sources */,
+				6E4206BC1AB6E34600A51136 /* BaseViewController.swift in Sources */,
 				6E4206BD1AB6E34600A51136 /* NavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
