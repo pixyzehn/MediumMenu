@@ -51,17 +51,10 @@ class NavigationController: UINavigationController {
         }
 
         menu = MediumMenu(items: [item1, item2, item3, item4, item5], forViewController: self)
-//        menu?.backgroundColor = UIColor.redColor()
-//        menu?.textColor = UIColor.redColor()
-//        menu?.highLightTextColor = UIColor.blueColor()
-//        menu?.titleAlignment = .Right
-//        menu?.height = 1000
-//        menu?.titleFont = UIFont.systemFontOfSize(30)
-//        menu?.panGestureEnable = false
     }
     
-    func showMenu() {
-        menu?.showMenu()
+    func show() {
+        menu?.show()
     }
 }
 

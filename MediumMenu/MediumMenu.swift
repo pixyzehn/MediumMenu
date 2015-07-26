@@ -127,7 +127,7 @@ public class MediumMenu: UIView {
     
     //MARK:Menu Interactions
     
-    public func showMenu() {
+    public func show() {
         if currentState == .Shown || currentState == .Displaying {
             closeWithCompletion(animated: true, completion: nil)
         } else {

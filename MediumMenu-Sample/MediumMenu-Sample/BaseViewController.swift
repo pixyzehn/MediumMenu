@@ -11,7 +11,7 @@ import UIKit
 class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        let icon = UIBarButtonItem(image: UIImage(named: "medium_icon"), style: .Plain, target: navigationController, action: "showMenu")
+        let icon = UIBarButtonItem(image: UIImage(named: "medium_icon"), style: .Plain, target: navigationController, action: "show")
         icon.imageInsets = UIEdgeInsetsMake(-10, 0, 0, 0)
         icon.tintColor = UIColor.blackColor()
         navigationItem.leftBarButtonItem = icon
