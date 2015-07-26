@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "MediumMenu"
-  s.version = "1.0.8"
+  s.version = "1.1.0"
   s.summary = "menu based on Medium iOS app"
   s.homepage = 'https://github.com/pixyzehn/MediumMenu'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
