@@ -51,18 +51,6 @@ class NavigationController: UINavigationController {
         }
 
         menu = MediumMenu(items: [item1, item2, item3, item4, item5], forViewController: self)
-        menu?.textColor = UIColor.purpleColor()
-        menu?.highLightTextColor = UIColor.redColor()
-        menu?.backgroundColor = UIColor.yellowColor()
-        menu?.titleFont = UIFont(name: "AvenirNext", size: 30)
-        menu?.titleAlignment = .Center
-        menu?.height = 370
-        menu?.bounceOffset = 10
-        menu?.velocityTreshold = 700
-        menu?.panGestureEnable = false
-        menu?.highLighedIndex = 3
-        menu?.heightForRowAtIndexPath = 40
-        menu?.heightForHeaderInSection = 0
     }
     
     func show() {
