@@ -12,11 +12,11 @@ public class MediumMenuItem: NSObject {
     public var title: String?
     public var completion: completionHandler?
 
-    override public init() {
+    override private init() {
         super.init()
     }
     
-    public convenience init(title: String, completionHandler completion: completionHandler) {
+    public convenience init(title: String, completion: completionHandler) {
         self.init()
         self.title = title
         self.completion = completion

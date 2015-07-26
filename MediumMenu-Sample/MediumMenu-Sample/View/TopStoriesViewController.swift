@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TopStoriesViewController: ViewController { 
+class TopStoriesViewController: BaseViewController { 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let icon = UIBarButtonItem(image: UIImage(named: "medium_icon"), style: .Plain, target: navigationController, action: "showMenu")
