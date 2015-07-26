@@ -90,4 +90,4 @@ MediumMenu is really similar to menu of real Medium for iOS.
 
 ## Author
 
-[pixyzehn](https://github.com/pixyzehn)
+[pixyzehn](https://github.com/pixyzehn)🐈
