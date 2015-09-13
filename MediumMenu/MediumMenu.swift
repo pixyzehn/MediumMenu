@@ -79,7 +79,7 @@ public class MediumMenu: UIView {
         self.highLighedIndex = 1
     }
 
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -118,11 +118,13 @@ public class MediumMenu: UIView {
     //MARK:StatusBar
     
     private func showStatusBar() {
+        // TODO: deprecated in iOS9
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Slide)
     }
     
     private func dismissStatusBar() {
-        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
+        // TODO: deprecated in iOS9
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Slide)
     }
     
     //MARK:Menu Interactions
@@ -180,7 +182,7 @@ public class MediumMenu: UIView {
 
     //MARK:Animation and menu operations
 
-    public func openWithCompletion(#animated:Bool, completion: completionHandler?) {
+    public func openWithCompletion(animated animated:Bool, completion: completionHandler?) {
         if currentState == .Shown {
             return
         }
@@ -213,7 +215,7 @@ public class MediumMenu: UIView {
         }
     }
     
-    public func closeWithCompletion(#animated:Bool, completion: completionHandler?) {
+    public func closeWithCompletion(animated animated:Bool, completion: completionHandler?) {
         dismissStatusBar()
         if let center = contentController?.view.center {
             
@@ -296,7 +298,6 @@ public class MediumMenu: UIView {
                     cell.textLabel?.textAlignment = .Center
                 case .Right:
                     cell.textLabel?.textAlignment = .Right
-                default: break
             }
         }
     }
