@@ -47,6 +47,7 @@ public class MediumMenu: UIView {
     public var highlighedIndex: Int?
     public var heightForRowAtIndexPath: CGFloat = 57
     public var heightForHeaderInSection: CGFloat = 30
+    public var enabled: Bool = true
 
     public var items: [MediumMenuItem] = []
 
@@ -114,6 +115,8 @@ public class MediumMenu: UIView {
     // MARK:Menu Interactions
     
     public func show() {
+        if !enabled { return }
+        
         if currentState == .Shown || currentState == .Displaying {
             closeWithCompletion(animated: true, completion: nil)
         } else {
@@ -123,6 +126,7 @@ public class MediumMenu: UIView {
     }
     
     public func didPan(pan: UIPanGestureRecognizer) {
+        if !enabled { return }
         if !panGestureEnable { return }
 
         if var viewCenter = pan.view?.center {
