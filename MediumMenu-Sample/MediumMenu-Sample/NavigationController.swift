@@ -19,7 +19,7 @@ class NavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
@@ -53,14 +53,13 @@ class NavigationController: UINavigationController {
         menu = MediumMenu(items: [item1, item2, item3, item4, item5], forViewController: self)
     }
     
-    func show() {
+    func showMenu() {
         menu?.show()
     }
 }
 
 extension UINavigationBar {
     public override func sizeThatFits(size: CGSize) -> CGSize {
-        let newsize = CGSizeMake(UIScreen.mainScreen().bounds.size.width, 60)
-        return newsize
+        return CGSizeMake(UIScreen.mainScreen().bounds.size.width, 60)
     }
 }

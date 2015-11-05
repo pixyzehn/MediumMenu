@@ -8,13 +8,11 @@
 
 import UIKit
 
-public class MediumMenuItem: NSObject {
+public class MediumMenuItem {
     public var title: String?
     public var completion: completionHandler?
 
-    override private init() {
-        super.init()
-    }
+    init() {}
     
     public convenience init(title: String, completion: completionHandler) {
         self.init()
