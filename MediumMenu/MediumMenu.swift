@@ -110,24 +110,6 @@ public class MediumMenu: UIView {
         contentController?.view.frame = CGRectMake(0, 0, CGRectGetWidth(UIScreen.mainScreen().bounds), CGRectGetHeight(UIScreen.mainScreen().bounds));
         menuContentTableView = UITableView(frame: frame)
     }
-    
-    // MARK:StatusBar
-    
-    private func showStatusBar() {
-        if #available(iOS 9, *) {
-            
-        } else {
-            UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Slide)
-        }
-    }
-    
-    private func dismissStatusBar() {
-        if #available(iOS 9, *) {
-            
-        } else {
-            UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Slide)
-        }
-    }
 
     // MARK:Menu Interactions
     
@@ -189,7 +171,6 @@ public class MediumMenu: UIView {
     public func openWithCompletion(animated animated:Bool, completion: completionHandler?) {
         if currentState == .Shown { return }
 
-        showStatusBar()
         if let x = contentController?.view.center.x {
             
             if animated {
@@ -216,7 +197,6 @@ public class MediumMenu: UIView {
     }
     
     public func closeWithCompletion(animated animated:Bool, completion: completionHandler?) {
-        dismissStatusBar()
         if let center = contentController?.view.center {
             
             if animated {
@@ -243,8 +223,6 @@ public class MediumMenu: UIView {
     }
 
     public func openMenuFromCenterWithVelocity(velocity: CGFloat) {
-        showStatusBar()
-        
         let viewCenterY = UIScreen.mainScreen().bounds.size.height/2 + height - bounceOffset
         currentState = .Displaying
 
@@ -260,8 +238,6 @@ public class MediumMenu: UIView {
     }
 
     public func closeMenuFromCenterWithVelocity(velocity: CGFloat) {
-        dismissStatusBar()
-        
         let viewCenterY = UIScreen.mainScreen().bounds.size.height/2
         currentState = .Displaying
 
@@ -327,7 +303,6 @@ extension MediumMenu: UITableViewDataSource, UITableViewDelegate {
         }
         highlighedIndex = indexPath.row
         tableView.reloadData()
-        dismissStatusBar()
         
         let selectedItem = items[indexPath.row - startIndex]
         closeWithCompletion(animated: true, completion: selectedItem.completion)
