@@ -45,6 +45,7 @@ public class MediumMenu: UIView {
     public var bounceOffset: CGFloat = 0
     public var velocityTreshold: CGFloat = 0
     public var highlighedIndex: Int?
+    public var autoUpdateHighlightedIndex: Bool = true
     public var heightForRowAtIndexPath: CGFloat = 57
     public var heightForHeaderInSection: CGFloat = 30
     public var enabled: Bool = true
@@ -68,7 +69,7 @@ public class MediumMenu: UIView {
         super.init(frame: frame)
         self.titleFont           = UIFont(name: "HelveticaNeue-Light", size: 28)
         self.titleAlignment      = .Left
-        self.height              = 466
+        self.height              = 400 // updated to good-fit height for iPhone 4s
         self.textColor           = Color.mediumWhiteColor
         self.highlightTextColor  = Color.mediumGlayColor
         self.menuBackgroundColor = Color.mediumBlackColor
@@ -85,6 +86,7 @@ public class MediumMenu: UIView {
     public convenience init(items: [MediumMenuItem], forViewController: UIViewController) {
         self.init()
         self.items = items
+        height = CGRectGetHeight(UIScreen.mainScreen().bounds)-80 // auto-calculate initial height based on screen size
         frame = CGRectMake(0, 0, CGRectGetWidth(UIScreen.mainScreen().bounds), height)
         contentController = forViewController
         menuContentTableView = UITableView(frame: frame)
@@ -305,7 +307,9 @@ extension MediumMenu: UITableViewDataSource, UITableViewDelegate {
         if indexPath.row < startIndex || indexPath.row > items.count - 1 + startIndex {
             return
         }
-        highlighedIndex = indexPath.row
+        if autoUpdateHighlightedIndex {
+            highlighedIndex = indexPath.row
+        }
         tableView.reloadData()
         
         let selectedItem = items[indexPath.row - startIndex]
