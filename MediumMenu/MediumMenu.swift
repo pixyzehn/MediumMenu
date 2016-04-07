@@ -83,7 +83,7 @@ public class MediumMenu: UIView {
         super.init(coder: aDecoder)
     }
     
-    public convenience init(items: [MediumMenuItem], forViewController: UIViewController) {
+    public init(items: [MediumMenuItem], forViewController: UIViewController) {
         self.init()
         self.items = items
         height = CGRectGetHeight(UIScreen.mainScreen().bounds)-80 // auto-calculate initial height based on screen size
@@ -98,7 +98,7 @@ public class MediumMenu: UIView {
         addSubview(menuContentTableView!)
         
         if panGestureEnable {
-            let pan = UIPanGestureRecognizer(target: self, action: "didPan:")
+            let pan = UIPanGestureRecognizer(target: self, action: #selector(MediumMenu.didPan(_:)))
             contentController?.view.addGestureRecognizer(pan)
         }
 
