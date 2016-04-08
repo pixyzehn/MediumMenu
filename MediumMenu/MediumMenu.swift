@@ -34,7 +34,7 @@ public class MediumMenu: UIView {
     private let cellIdentifier = "cell"
     private var currentState: State = .Closed
     private var contentController: UIViewController?
-    private var menuContentTableView: UITableView?
+    internal var menuContentTableView: UITableView?
 
     public var panGestureEnable: Bool = true
     public var titleAlignment: Alignment = .Left
