@@ -49,7 +49,8 @@ public class MediumMenu: UIView {
     public var heightForRowAtIndexPath: CGFloat = 57
     public var heightForHeaderInSection: CGFloat = 30
     public var enabled: Bool = true
-
+    public var panBounceOffset: CGFloat = 0
+    
     public var items: [MediumMenuItem] = []
 
     public var height: CGFloat = 0 {
@@ -73,10 +74,11 @@ public class MediumMenu: UIView {
         self.textColor           = Color.mediumWhiteColor
         self.highlightTextColor  = Color.mediumGlayColor
         self.menuBackgroundColor = Color.mediumBlackColor
-        self.bounceOffset        = 0
+        self.bounceOffset        = 50
         self.velocityTreshold    = 1000
         self.panGestureEnable    = true
         self.highlighedIndex     = 1
+        self.panBounceOffset     = 30
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -132,17 +134,19 @@ public class MediumMenu: UIView {
         if !panGestureEnable { return }
 
         if var viewCenter = pan.view?.center {
+            
+            print(viewCenter.y - (contentController?.view.frame.size.height)!/2)
             if pan.state == .Began || pan.state == .Changed {
                 
                 let translation = pan.translationInView(pan.view!.superview!)
 
                 if viewCenter.y >= UIScreen.mainScreen().bounds.size.height/2
-                    && viewCenter.y <= (UIScreen.mainScreen().bounds.size.height/2 + height) - bounceOffset {
+                    && viewCenter.y <= (UIScreen.mainScreen().bounds.size.height/2 + height) - bounceOffset + panBounceOffset {
                             
                     currentState = .Displaying
                     viewCenter.y = abs(viewCenter.y + translation.y)
                     if viewCenter.y >= UIScreen.mainScreen().bounds.size.height/2
-                        && viewCenter.y <= (UIScreen.mainScreen().bounds.size.height/2 + height) - bounceOffset {
+                        && viewCenter.y <= (UIScreen.mainScreen().bounds.size.height/2 + height) - bounceOffset + panBounceOffset {
 
                         contentController?.view.center = viewCenter
                     }
@@ -162,7 +166,7 @@ public class MediumMenu: UIView {
                     return
                 }
 
-                if viewCenter.y > contentController?.view.frame.size.height {
+                if viewCenter.y - (contentController?.view.frame.size.height)! / 2 > height / 2  {
                     openWithCompletion(animated: true, completion: nil)
 
                 } else {
