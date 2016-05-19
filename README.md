@@ -58,7 +58,7 @@ Add the MediumMenu (including MediumMenu.swift) folder into your project.
 
 Due to the lack of choice whether status bar is hidden or not,  Edit info.plist in your project.
 
-Add "Status bar is initially hidden" and "View controller-based status bar appearance" in info.plist as key. Eash value is "YES" and "NO".
+Add "Status bar is initially hidden" and "View controller-based status bar appearance" keys to your info.plist. Set the values to "YES" and "NO" respectively.
 
 You can set the following property. If you don't set the these property, default value is used.
 
