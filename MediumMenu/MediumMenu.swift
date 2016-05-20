@@ -49,6 +49,7 @@ public class MediumMenu: UIView {
     public var heightForRowAtIndexPath: CGFloat = 57
     public var heightForHeaderInSection: CGFloat = 30
     public var enabled: Bool = true
+    public var animationDuration: NSTimeInterval = 0.2
 
     public var items: [MediumMenuItem] = []
 
@@ -178,48 +179,38 @@ public class MediumMenu: UIView {
         if currentState == .Shown { return }
 
         if let x = contentController?.view.center.x {
-            
             if animated {
-                UIView.animateWithDuration(0.2, animations: { [unowned self] in
+                UIView.animateWithDuration(animationDuration, animations: {
                     self.contentController?.view.center = CGPointMake(x, UIScreen.mainScreen().bounds.size.height/2 + self.height)
-                    
-                }, completion: { [unowned self] finished -> Void in
-                    UIView.animateWithDuration(0.2, animations: { [unowned self] in
+                }, completion: { _ in
+                    UIView.animateWithDuration(self.animationDuration, animations: {
                         self.contentController?.view.center = CGPointMake(x, UIScreen.mainScreen().bounds.size.height/2 + self.height - self.bounceOffset)
-
-                    }, completion: { [unowned self] finished in
+                    }, completion: { _ in
                         self.currentState = .Shown
                         completion?()
                     })
                 })
-                
             } else {
                 self.contentController?.view.center = CGPointMake(x, UIScreen.mainScreen().bounds.size.height/2 + self.height)
                 self.currentState = .Shown
                 completion?()
             }
-            
         }
     }
     
     public func closeWithCompletion(animated animated:Bool, completion: completionHandler?) {
         if let center = contentController?.view.center {
-            
             if animated {
-
-                UIView.animateWithDuration(0.2, animations: { [unowned self] in
+                UIView.animateWithDuration(animationDuration, animations: {
                     self.contentController?.view.center = CGPointMake(center.x, center.y + self.bounceOffset)
-                    
-                }, completion: { [unowned self] finished -> Void in
-                    UIView.animateWithDuration(0.2, animations: { [unowned self] in
+                }, completion: { _ in
+                    UIView.animateWithDuration(self.animationDuration, animations: {
                         self.contentController?.view.center = CGPointMake(center.x, UIScreen.mainScreen().bounds.size.height/2)
-
-                    }, completion: { finished in
+                    }, completion: { _ in
                         self.currentState = .Closed
                         completion?()
                     })
                 })
-
             } else {
                 contentController?.view.center = CGPointMake(center.x, UIScreen.mainScreen().bounds.size.height/2)
                 currentState = .Closed
@@ -233,12 +224,11 @@ public class MediumMenu: UIView {
         currentState = .Displaying
 
         let duration = Double((viewCenterY - contentController!.view.center.y) / velocity)
-        UIView.animateWithDuration(duration, animations: { [unowned self] in
+        UIView.animateWithDuration(duration, animations: {
             if let center = self.contentController?.view.center {
                 self.contentController?.view.center = CGPointMake(center.x, viewCenterY)
             }
-            
-        }, completion: { [unowned self] finished in
+        }, completion: { _ in
             self.currentState = .Shown
         })
     }
@@ -248,12 +238,11 @@ public class MediumMenu: UIView {
         currentState = .Displaying
 
         let duration = Double((contentController!.view.center.y - viewCenterY) / velocity)
-        UIView.animateWithDuration(duration, animations: { [unowned self] in
+        UIView.animateWithDuration(duration, animations: {
             if let center = self.contentController?.view.center {
                 self.contentController?.view.center = CGPointMake(center.x, UIScreen.mainScreen().bounds.size.height/2)
             }
-            
-        }, completion: { [unowned self] finished in
+        }, completion: { _ in
             self.currentState = .Closed
         })
     }
