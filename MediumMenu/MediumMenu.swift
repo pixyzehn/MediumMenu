@@ -60,6 +60,18 @@ public class MediumMenu: UIView {
         }
     }
 
+    private var screenBounds: CGRect {
+        return UIScreen.mainScreen().bounds
+    }
+
+    private var screenHeight: CGFloat {
+        return screenBounds.height
+    }
+
+    private var screenWidth: CGFloat {
+        return screenBounds.width
+    }
+
     override public var backgroundColor: UIColor? {
         didSet {
             menuContentTableView?.backgroundColor = backgroundColor
@@ -87,8 +99,8 @@ public class MediumMenu: UIView {
     public init(items: [MediumMenuItem], forViewController: UIViewController) {
         self.init()
         self.items = items
-        height = CGRectGetHeight(UIScreen.mainScreen().bounds)-80 // auto-calculate initial height based on screen size
-        frame = CGRectMake(0, 0, CGRectGetWidth(UIScreen.mainScreen().bounds), height)
+        height = screenHeight - 80 // auto-calculate initial height based on screen size
+        frame = CGRectMake(0, 0, screenWidth, height)
         contentController = forViewController
         menuContentTableView = UITableView(frame: frame)
         menuContentTableView?.delegate = self
@@ -110,8 +122,8 @@ public class MediumMenu: UIView {
     }
     
     public override func layoutSubviews() {
-        frame = CGRectMake(0, 0, CGRectGetWidth(UIScreen.mainScreen().bounds), height);
-        contentController?.view.frame = CGRectMake(0, 0, CGRectGetWidth(UIScreen.mainScreen().bounds), CGRectGetHeight(UIScreen.mainScreen().bounds));
+        frame = CGRectMake(0, 0, screenWidth, height);
+        contentController?.view.frame = CGRectMake(0, 0, screenWidth, screenHeight);
         menuContentTableView = UITableView(frame: frame)
     }
 
@@ -137,13 +149,13 @@ public class MediumMenu: UIView {
                 
                 let translation = pan.translationInView(pan.view!.superview!)
 
-                if viewCenter.y >= UIScreen.mainScreen().bounds.size.height/2
-                    && viewCenter.y <= (UIScreen.mainScreen().bounds.size.height/2 + height) - bounceOffset {
+                if viewCenter.y >= screenHeight / 2
+                    && viewCenter.y <= (screenHeight / 2 + height) - bounceOffset {
                             
                     currentState = .Displaying
                     viewCenter.y = abs(viewCenter.y + translation.y)
-                    if viewCenter.y >= UIScreen.mainScreen().bounds.size.height/2
-                        && viewCenter.y <= (UIScreen.mainScreen().bounds.size.height/2 + height) - bounceOffset {
+                    if viewCenter.y >= screenHeight / 2
+                        && viewCenter.y <= (screenHeight / 2 + height) - bounceOffset {
 
                         contentController?.view.center = viewCenter
                     }
@@ -180,17 +192,17 @@ public class MediumMenu: UIView {
 
         if animated {
             UIView.animateWithDuration(animationDuration, animations: {
-                self.contentController?.view.center = CGPointMake(x, UIScreen.mainScreen().bounds.size.height/2 + self.height)
+                self.contentController?.view.center = CGPointMake(x, self.screenHeight / 2 + self.height)
             }, completion: { _ in
                 UIView.animateWithDuration(self.animationDuration, animations: {
-                    self.contentController?.view.center = CGPointMake(x, UIScreen.mainScreen().bounds.size.height/2 + self.height - self.bounceOffset)
+                    self.contentController?.view.center = CGPointMake(x, self.screenHeight / 2 + self.height - self.bounceOffset)
                 }, completion: { _ in
                     self.currentState = .Shown
                     completion?()
                 })
             })
         } else {
-            self.contentController?.view.center = CGPointMake(x, UIScreen.mainScreen().bounds.size.height/2 + self.height)
+            self.contentController?.view.center = CGPointMake(x, screenHeight / 2 + self.height)
             self.currentState = .Shown
             completion?()
         }
@@ -204,21 +216,21 @@ public class MediumMenu: UIView {
                 self.contentController?.view.center = CGPointMake(center.x, center.y + self.bounceOffset)
             }, completion: { _ in
                 UIView.animateWithDuration(self.animationDuration, animations: {
-                    self.contentController?.view.center = CGPointMake(center.x, UIScreen.mainScreen().bounds.size.height/2)
+                    self.contentController?.view.center = CGPointMake(center.x, self.screenHeight / 2)
                 }, completion: { _ in
                     self.currentState = .Closed
                     completion?()
                 })
             })
         } else {
-            contentController?.view.center = CGPointMake(center.x, UIScreen.mainScreen().bounds.size.height/2)
+            contentController?.view.center = CGPointMake(center.x, screenHeight / 2)
             currentState = .Closed
             completion?()
         }
     }
 
     public func openMenuFromCenterWithVelocity(velocity: CGFloat) {
-        let viewCenterY = UIScreen.mainScreen().bounds.size.height/2 + height - bounceOffset
+        let viewCenterY = screenHeight / 2 + height - bounceOffset
         currentState = .Displaying
 
         let duration = Double((viewCenterY - contentController!.view.center.y) / velocity)
@@ -232,13 +244,13 @@ public class MediumMenu: UIView {
     }
 
     public func closeMenuFromCenterWithVelocity(velocity: CGFloat) {
-        let viewCenterY = UIScreen.mainScreen().bounds.size.height/2
+        let viewCenterY = screenHeight / 2
         currentState = .Displaying
 
         let duration = Double((contentController!.view.center.y - viewCenterY) / velocity)
         UIView.animateWithDuration(duration, animations: {
             if let center = self.contentController?.view.center {
-                self.contentController?.view.center = CGPointMake(center.x, UIScreen.mainScreen().bounds.size.height/2)
+                self.contentController?.view.center = CGPointMake(center.x, self.screenHeight / 2)
             }
         }, completion: { _ in
             self.currentState = .Closed
