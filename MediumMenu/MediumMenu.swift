@@ -100,7 +100,7 @@ public class MediumMenu: UIView {
         self.init()
         self.items = items
         height = screenHeight - 80 // auto-calculate initial height based on screen size
-        frame = CGRectMake(0, 0, screenWidth, height)
+        frame = CGRect(x: 0, y: 0, width: screenWidth, height: height)
         contentController = forViewController
         menuContentTableView = UITableView(frame: frame)
         menuContentTableView?.delegate = self
@@ -122,8 +122,8 @@ public class MediumMenu: UIView {
     }
     
     public override func layoutSubviews() {
-        frame = CGRectMake(0, 0, screenWidth, height);
-        contentController?.view.frame = CGRectMake(0, 0, screenWidth, screenHeight);
+        frame = CGRect(x: 0, y: 0, width: screenWidth, height: height);
+        contentController?.view.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight);
         menuContentTableView = UITableView(frame: frame)
     }
 
@@ -192,17 +192,17 @@ public class MediumMenu: UIView {
 
         if animated {
             UIView.animateWithDuration(animationDuration, animations: {
-                self.contentController?.view.center = CGPointMake(x, self.screenHeight / 2 + self.height)
+                self.contentController?.view.center = CGPoint(x: x, y: self.screenHeight / 2 + self.height)
             }, completion: { _ in
                 UIView.animateWithDuration(self.animationDuration, animations: {
-                    self.contentController?.view.center = CGPointMake(x, self.screenHeight / 2 + self.height - self.bounceOffset)
+                    self.contentController?.view.center = CGPoint(x: x, y: self.screenHeight / 2 + self.height - self.bounceOffset)
                 }, completion: { _ in
                     self.currentState = .Shown
                     completion?()
                 })
             })
         } else {
-            self.contentController?.view.center = CGPointMake(x, screenHeight / 2 + self.height)
+            self.contentController?.view.center = CGPoint(x: x, y: screenHeight / 2 + self.height)
             self.currentState = .Shown
             completion?()
         }
@@ -213,17 +213,17 @@ public class MediumMenu: UIView {
 
         if animated {
             UIView.animateWithDuration(animationDuration, animations: {
-                self.contentController?.view.center = CGPointMake(center.x, center.y + self.bounceOffset)
+                self.contentController?.view.center = CGPoint(x: center.x, y: center.y + self.bounceOffset)
             }, completion: { _ in
                 UIView.animateWithDuration(self.animationDuration, animations: {
-                    self.contentController?.view.center = CGPointMake(center.x, self.screenHeight / 2)
+                    self.contentController?.view.center = CGPoint(x: center.x, y: self.screenHeight / 2)
                 }, completion: { _ in
                     self.currentState = .Closed
                     completion?()
                 })
             })
         } else {
-            contentController?.view.center = CGPointMake(center.x, screenHeight / 2)
+            contentController?.view.center = CGPoint(x: center.x, y: screenHeight / 2)
             currentState = .Closed
             completion?()
         }
@@ -236,7 +236,7 @@ public class MediumMenu: UIView {
         let duration = Double((viewCenterY - contentController!.view.center.y) / velocity)
         UIView.animateWithDuration(duration, animations: {
             if let center = self.contentController?.view.center {
-                self.contentController?.view.center = CGPointMake(center.x, viewCenterY)
+                self.contentController?.view.center = CGPoint(x: center.x, y: viewCenterY)
             }
         }, completion: { _ in
             self.currentState = .Shown
@@ -250,7 +250,7 @@ public class MediumMenu: UIView {
         let duration = Double((contentController!.view.center.y - viewCenterY) / velocity)
         UIView.animateWithDuration(duration, animations: {
             if let center = self.contentController?.view.center {
-                self.contentController?.view.center = CGPointMake(center.x, self.screenHeight / 2)
+                self.contentController?.view.center = CGPoint(x: center.x, y: self.screenHeight / 2)
             }
         }, completion: { _ in
             self.currentState = .Closed
@@ -316,7 +316,7 @@ extension MediumMenu: UITableViewDataSource, UITableViewDelegate {
     }
     
     public func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRectMake(0, 0, frame.width, 30))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: 30))
         view.backgroundColor = UIColor.clearColor()
         return view
     }
