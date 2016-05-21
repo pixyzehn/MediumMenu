@@ -8,7 +8,7 @@
 
 import UIKit
 
-public typealias completionHandler = (() -> Void)
+public typealias CompletionHandler = (() -> Void)
 
 public class MediumMenu: UIView {
 
@@ -175,7 +175,7 @@ public class MediumMenu: UIView {
 
     // MARK:Animation and menu operations
 
-    public func openWithCompletion(animated animated:Bool, completion: completionHandler?) {
+    public func openWithCompletion(animated animated:Bool, completion: CompletionHandler?) {
         if currentState == .Shown { return }
 
         if let x = contentController?.view.center.x {
@@ -198,7 +198,7 @@ public class MediumMenu: UIView {
         }
     }
     
-    public func closeWithCompletion(animated animated:Bool, completion: completionHandler?) {
+    public func closeWithCompletion(animated animated:Bool, completion: CompletionHandler?) {
         if let center = contentController?.view.center {
             if animated {
                 UIView.animateWithDuration(animationDuration, animations: {
