@@ -157,7 +157,6 @@ public class MediumMenu: UIView {
                 if velocity.y > velocityTreshold {
                     openMenuFromCenterWithVelocity(velocity.y)
                     return
-
                 } else if velocity.y < -velocityTreshold {
                     closeMenuFromCenterWithVelocity(abs(velocity.y))
                     return
@@ -165,7 +164,6 @@ public class MediumMenu: UIView {
 
                 if viewCenter.y > contentController?.view.frame.size.height {
                     openWithCompletion(animated: true, completion: nil)
-
                 } else {
                     closeWithCompletion(animated: true, completion: nil)
                 }
@@ -178,44 +176,44 @@ public class MediumMenu: UIView {
     public func openWithCompletion(animated animated:Bool, completion: CompletionHandler?) {
         if currentState == .Shown { return }
 
-        if let x = contentController?.view.center.x {
-            if animated {
-                UIView.animateWithDuration(animationDuration, animations: {
-                    self.contentController?.view.center = CGPointMake(x, UIScreen.mainScreen().bounds.size.height/2 + self.height)
-                }, completion: { _ in
-                    UIView.animateWithDuration(self.animationDuration, animations: {
-                        self.contentController?.view.center = CGPointMake(x, UIScreen.mainScreen().bounds.size.height/2 + self.height - self.bounceOffset)
-                    }, completion: { _ in
-                        self.currentState = .Shown
-                        completion?()
-                    })
-                })
-            } else {
+        guard let x = contentController?.view.center.x else { return }
+
+        if animated {
+            UIView.animateWithDuration(animationDuration, animations: {
                 self.contentController?.view.center = CGPointMake(x, UIScreen.mainScreen().bounds.size.height/2 + self.height)
-                self.currentState = .Shown
-                completion?()
-            }
+            }, completion: { _ in
+                UIView.animateWithDuration(self.animationDuration, animations: {
+                    self.contentController?.view.center = CGPointMake(x, UIScreen.mainScreen().bounds.size.height/2 + self.height - self.bounceOffset)
+                }, completion: { _ in
+                    self.currentState = .Shown
+                    completion?()
+                })
+            })
+        } else {
+            self.contentController?.view.center = CGPointMake(x, UIScreen.mainScreen().bounds.size.height/2 + self.height)
+            self.currentState = .Shown
+            completion?()
         }
     }
     
     public func closeWithCompletion(animated animated:Bool, completion: CompletionHandler?) {
-        if let center = contentController?.view.center {
-            if animated {
-                UIView.animateWithDuration(animationDuration, animations: {
-                    self.contentController?.view.center = CGPointMake(center.x, center.y + self.bounceOffset)
+        guard let center = contentController?.view.center else { return }
+
+        if animated {
+            UIView.animateWithDuration(animationDuration, animations: {
+                self.contentController?.view.center = CGPointMake(center.x, center.y + self.bounceOffset)
+            }, completion: { _ in
+                UIView.animateWithDuration(self.animationDuration, animations: {
+                    self.contentController?.view.center = CGPointMake(center.x, UIScreen.mainScreen().bounds.size.height/2)
                 }, completion: { _ in
-                    UIView.animateWithDuration(self.animationDuration, animations: {
-                        self.contentController?.view.center = CGPointMake(center.x, UIScreen.mainScreen().bounds.size.height/2)
-                    }, completion: { _ in
-                        self.currentState = .Closed
-                        completion?()
-                    })
+                    self.currentState = .Closed
+                    completion?()
                 })
-            } else {
-                contentController?.view.center = CGPointMake(center.x, UIScreen.mainScreen().bounds.size.height/2)
-                currentState = .Closed
-                completion?()
-            }
+            })
+        } else {
+            contentController?.view.center = CGPointMake(center.x, UIScreen.mainScreen().bounds.size.height/2)
+            currentState = .Closed
+            completion?()
         }
     }
 
