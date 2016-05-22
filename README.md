@@ -76,6 +76,8 @@ menu.panGestureEnable = false                                 // Default is true
 menu.highLighedIndex = 3                                      // Default is 1.
 menu.heightForRowAtIndexPath = 40                             // Default is 57.
 menu.heightForHeaderInSection = 0                             // Default is 30.
+menu.enabled = false                                          // Default is true.
+menu.animationDuration = 0.33                                 // Default is 0.2.
 ```
 
 In the rest of the details, refer to MediumMenu-Sample project.
