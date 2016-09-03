@@ -117,8 +117,9 @@ public class MediumMenu: UIView {
 
         let menuController = UIViewController()
         menuController.view = self
-        UIApplication.sharedApplication().delegate?.window??.rootViewController = menuController
-        UIApplication.sharedApplication().delegate?.window??.addSubview(contentController!.view)
+        
+        UIApplication.sharedApplication().delegate?.window??.rootViewController = contentController
+        UIApplication.sharedApplication().delegate?.window??.insertSubview(menuController.view, atIndex: 0)
     }
     
     public override func layoutSubviews() {
