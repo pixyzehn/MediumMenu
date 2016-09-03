@@ -10,13 +10,15 @@ import UIKit
 
 public class MediumMenuItem {
     public var title: String?
+    public var image: UIImage?
     public var completion: CompletionHandler?
 
     init() {}
     
-    public convenience init(title: String, completion: CompletionHandler) {
+    public convenience init(title: String, image:UIImage?, completion: CompletionHandler) {
         self.init()
         self.title = title
+        self.image = image
         self.completion = completion
     }
 }
