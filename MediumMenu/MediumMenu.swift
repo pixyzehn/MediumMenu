@@ -297,6 +297,7 @@ extension MediumMenu: UITableViewDataSource, UITableViewDelegate {
         if indexPath.row >= startIndex && indexPath.row <= (items.count - 1 + startIndex) {
             mediumMenuItem = items[indexPath.row - startIndex]
             cell.textLabel?.text = mediumMenuItem?.title
+            cell.imageView?.image = mediumMenuItem?.image
         }
         
         return cell
