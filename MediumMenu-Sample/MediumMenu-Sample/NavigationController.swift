@@ -10,10 +10,6 @@ import UIKit
 
 class NavigationController: UINavigationController {
    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     var menu: MediumMenu?
     
     override func viewDidLoad() {
