@@ -176,7 +176,7 @@ public class MediumMenu: UIView {
 
     // MARK:Animation and menu operations
 
-    public func openWithCompletion(animated animated:Bool, completion: CompletionHandler?) {
+    public func openWithCompletion(animated animated: Bool, completion: CompletionHandler?) {
         if currentState == .Shown { return }
         guard let x = contentController?.view.center.x else { return }
         if animated {
@@ -197,7 +197,7 @@ public class MediumMenu: UIView {
         }
     }
     
-    public func closeWithCompletion(animated animated:Bool, completion: CompletionHandler?) {
+    public func closeWithCompletion(animated animated: Bool, completion: CompletionHandler?) {
         guard let center = contentController?.view.center else { return }
         if animated {
             UIView.animateWithDuration(animationDuration, animations: {
