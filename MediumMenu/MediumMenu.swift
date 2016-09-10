@@ -203,8 +203,8 @@ public class MediumMenu: UIView {
                 })
             })
         } else {
-            self.contentController?.view.center = CGPoint(x: x, y: screenHeight / 2 + self.height)
-            self.currentState = .Shown
+            contentController?.view.center = CGPoint(x: x, y: screenHeight / 2 + self.height)
+            currentState = .Shown
             completion?()
         }
     }
