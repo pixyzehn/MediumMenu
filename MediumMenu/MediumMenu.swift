@@ -11,7 +11,6 @@ import UIKit
 public typealias CompletionHandler = (() -> Void)
 
 public class MediumMenu: UIView {
-
     public enum State {
         case Shown
         case Closed
@@ -24,16 +23,17 @@ public class MediumMenu: UIView {
         case Right
     }
 
-    private struct Color {
+    private struct DefaultColor {
         static let mediumWhiteColor = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1)
         static let mediumBlackColor = UIColor(red:0.05, green:0.05, blue:0.05, alpha:1)
-        static let mediumGlayColor  = UIColor(red:0.57, green:0.57, blue:0.57, alpha:1)
+        static let mediumGlayColor = UIColor(red:0.57, green:0.57, blue:0.57, alpha:1)
     }
 
     private let startIndex = 1
-    private let cellIdentifier = "cell"
+    private let cellIdentifier = "MediumMenucell"
     private var currentState: State = .Closed
     private var contentController: UIViewController?
+
     public var menuContentTableView: UITableView?
 
     public var panGestureEnable: Bool = true
@@ -80,16 +80,16 @@ public class MediumMenu: UIView {
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
-        self.titleFont           = UIFont(name: "HelveticaNeue-Light", size: 28)
-        self.titleAlignment      = .Left
-        self.height              = 400 // updated to good-fit height for iPhone 4s
-        self.textColor           = Color.mediumWhiteColor
-        self.highlightTextColor  = Color.mediumGlayColor
-        self.menuBackgroundColor = Color.mediumBlackColor
-        self.bounceOffset        = 0
-        self.velocityTreshold    = 1000
-        self.panGestureEnable    = true
-        self.highlighedIndex     = 1
+        self.titleFont = UIFont(name: "HelveticaNeue-Light", size: 28)
+        self.titleAlignment = .Left
+        self.height = 400 // updated to good-fit height for iPhone 4s
+        self.textColor = DefaultColor.mediumWhiteColor
+        self.highlightTextColor = DefaultColor.mediumGlayColor
+        self.menuBackgroundColor = DefaultColor.mediumBlackColor
+        self.bounceOffset = 0
+        self.velocityTreshold = 1000
+        self.panGestureEnable = true
+        self.highlighedIndex = 1
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -128,11 +128,10 @@ public class MediumMenu: UIView {
         menuContentTableView = UITableView(frame: frame)
     }
 
-    // MARK:Menu Interactions
-    
+    // MARK: Menu Interactions
+
     public func show() {
         if !enabled { return }
-        
         if currentState == .Shown || currentState == .Displaying {
             closeWithCompletion(animated: true, completion: nil)
         } else {
@@ -144,29 +143,21 @@ public class MediumMenu: UIView {
     public func didPan(pan: UIPanGestureRecognizer) {
         if !enabled { return }
         if !panGestureEnable { return }
-
         if var viewCenter = pan.view?.center {
             if pan.state == .Began || pan.state == .Changed {
-                
                 let translation = pan.translationInView(pan.view!.superview!)
-
                 if viewCenter.y >= screenHeight / 2
                     && viewCenter.y <= (screenHeight / 2 + height) - bounceOffset {
-                            
                     currentState = .Displaying
                     viewCenter.y = abs(viewCenter.y + translation.y)
                     if viewCenter.y >= screenHeight / 2
                         && viewCenter.y <= (screenHeight / 2 + height) - bounceOffset {
-
                         contentController?.view.center = viewCenter
                     }
                     pan.setTranslation(CGPointZero, inView: contentController?.view)
                 }
-                
             } else if pan.state == .Ended {
-
                 let velocity = pan.velocityInView(contentController?.view.superview)
-
                 if velocity.y > velocityTreshold {
                     openMenuFromCenterWithVelocity(velocity.y)
                     return
@@ -174,7 +165,6 @@ public class MediumMenu: UIView {
                     closeMenuFromCenterWithVelocity(abs(velocity.y))
                     return
                 }
-
                 if viewCenter.y > contentController?.view.frame.size.height {
                     openWithCompletion(animated: true, completion: nil)
                 } else {
@@ -188,9 +178,7 @@ public class MediumMenu: UIView {
 
     public func openWithCompletion(animated animated:Bool, completion: CompletionHandler?) {
         if currentState == .Shown { return }
-
         guard let x = contentController?.view.center.x else { return }
-
         if animated {
             UIView.animateWithDuration(animationDuration, animations: {
                 self.contentController?.view.center = CGPoint(x: x, y: self.screenHeight / 2 + self.height)
@@ -211,7 +199,6 @@ public class MediumMenu: UIView {
     
     public func closeWithCompletion(animated animated:Bool, completion: CompletionHandler?) {
         guard let center = contentController?.view.center else { return }
-
         if animated {
             UIView.animateWithDuration(animationDuration, animations: {
                 self.contentController?.view.center = CGPoint(x: center.x, y: center.y + self.bounceOffset)
@@ -233,7 +220,6 @@ public class MediumMenu: UIView {
     public func openMenuFromCenterWithVelocity(velocity: CGFloat) {
         let viewCenterY = screenHeight / 2 + height - bounceOffset
         currentState = .Displaying
-
         let duration = Double((viewCenterY - contentController!.view.center.y) / velocity)
         UIView.animateWithDuration(duration, animations: {
             if let center = self.contentController?.view.center {
@@ -247,7 +233,6 @@ public class MediumMenu: UIView {
     public func closeMenuFromCenterWithVelocity(velocity: CGFloat) {
         let viewCenterY = screenHeight / 2
         currentState = .Displaying
-
         let duration = Double((contentController!.view.center.y - viewCenterY) / velocity)
         UIView.animateWithDuration(duration, animations: {
             if let center = self.contentController?.view.center {
@@ -258,7 +243,7 @@ public class MediumMenu: UIView {
         })
     }
     
-    // MARK:Custom Function
+    // MARK: Custom Function
     
     public func setHighLighedRow(row: Int) {
         highlighedIndex = row
@@ -280,39 +265,35 @@ public class MediumMenu: UIView {
     }
 }
 
-extension MediumMenu: UITableViewDataSource, UITableViewDelegate {
+extension MediumMenu: UITableViewDataSource {
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count + 2 * startIndex
     }
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
-        
         setMenuTitleAlligmentForCell(cell)
         cell.backgroundColor = UIColor.clearColor()
         cell.selectionStyle = .None
         cell.textLabel?.textColor = highlighedIndex == indexPath.row ? highlightTextColor : textColor
         cell.textLabel?.font = titleFont
-        
         let mediumMenuItem: MediumMenuItem?
         if indexPath.row >= startIndex && indexPath.row <= (items.count - 1 + startIndex) {
             mediumMenuItem = items[indexPath.row - startIndex]
             cell.textLabel?.text = mediumMenuItem?.title
             cell.imageView?.image = mediumMenuItem?.image
         }
-        
         return cell
     }
-    
+}
+
+extension MediumMenu: UITableViewDelegate {
     public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row < startIndex || indexPath.row > items.count - 1 + startIndex {
-            return
-        }
+        if indexPath.row < startIndex || indexPath.row > items.count - 1 + startIndex { return }
         if autoUpdateHighlightedIndex {
             highlighedIndex = indexPath.row
         }
         tableView.reloadData()
-        
         let selectedItem = items[indexPath.row - startIndex]
         closeWithCompletion(animated: true, completion: selectedItem.completion)
     }
