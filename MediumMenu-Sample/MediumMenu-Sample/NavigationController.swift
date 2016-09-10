@@ -21,27 +21,27 @@ class NavigationController: UINavigationController {
         let homeViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
         setViewControllers([homeViewController], animated: false)
 
-        let item1 = MediumMenuItem(title: "Home", image: nil) {
+        let item1 = MediumMenuItem(title: "Home") {
             let homeViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
             self.setViewControllers([homeViewController], animated: false)
         }
         
-        let item2 = MediumMenuItem(title: "Top stories", image: nil) {
+        let item2 = MediumMenuItem(title: "Top stories") {
             let topStoriesViewController = storyboard.instantiateViewControllerWithIdentifier("Top") as! TopStoriesViewController
             self.setViewControllers([topStoriesViewController], animated: false)
         }
         
-        let item3 = MediumMenuItem(title: "Bookmarks", image: nil) {
+        let item3 = MediumMenuItem(title: "Bookmarks") {
             let bookMarksViewController = storyboard.instantiateViewControllerWithIdentifier("Bookmarks") as! BookmarksViewController
             self.setViewControllers([bookMarksViewController], animated: false)
         }
 
-        let item4 = MediumMenuItem(title: "Help", image: nil) {
+        let item4 = MediumMenuItem(title: "Help") {
             let helpViewController = storyboard.instantiateViewControllerWithIdentifier("Help") as! HelpViewController
             self.setViewControllers([helpViewController], animated: false)
         }
         
-        let item5 = MediumMenuItem(title: "Sign out", image: nil) {
+        let item5 = MediumMenuItem(title: "Sign out") {
             let signoutViewController = storyboard.instantiateViewControllerWithIdentifier("Signout") as! SignoutViewController
             self.setViewControllers([signoutViewController], animated: false)
         }

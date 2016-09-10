@@ -15,7 +15,7 @@ public class MediumMenuItem {
 
     init() {}
     
-    public convenience init(title: String, image:UIImage?, completion: CompletionHandler) {
+    public convenience init(title: String, image:UIImage? = nil, completion: CompletionHandler? = nil) {
         self.init()
         self.title = title
         self.image = image
