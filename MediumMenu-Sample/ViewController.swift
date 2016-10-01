@@ -12,9 +12,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let item = UIBarButtonItem(image: UIImage(named: "medium_icon"), style: .Plain, target: navigationController, action: #selector(NavigationController.showMenu))
+        let item = UIBarButtonItem(image: UIImage(named: "medium_icon"), style: .plain, target: navigationController, action: #selector(NavigationController.showMenu))
         item.imageInsets = UIEdgeInsetsMake(-10, 0, 0, 0)
-        item.tintColor = UIColor.blackColor()
+        item.tintColor = UIColor.black
         navigationItem.leftBarButtonItem = item
     } 
 }

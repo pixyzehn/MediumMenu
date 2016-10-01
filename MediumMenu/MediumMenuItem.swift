@@ -8,10 +8,10 @@
 
 import UIKit
 
-public class MediumMenuItem {
-    public var title: String?
-    public var image: UIImage?
-    public var completion: CompletionHandler?
+open class MediumMenuItem {
+    open var title: String?
+    open var image: UIImage?
+    open var completion: CompletionHandler?
 
     init() {}
     
