@@ -11,11 +11,11 @@ import UIKit
 open class MediumMenuItem {
     open var title: String?
     open var image: UIImage?
-    open var completion: CompletionHandler?
+    open var completion: (() -> Void)?
 
     init() {}
     
-    public convenience init(title: String, image:UIImage? = nil, completion: CompletionHandler? = nil) {
+    public convenience init(title: String, image:UIImage? = nil, completion: (() -> Void)? = nil) {
         self.init()
         self.title = title
         self.image = image
