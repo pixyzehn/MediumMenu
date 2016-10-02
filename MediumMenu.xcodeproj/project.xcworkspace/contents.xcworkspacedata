@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MediumMenu-Sample.xcodeproj">
+      location = "self:/Users/pixyzehn/Developer/iOS/MediumMenu/MediumMenu-Sample/MediumMenu.xcodeproj">
    </FileRef>
 </Workspace>

@@ -17,7 +17,7 @@
                BlueprintIdentifier = "6E08A6A71A87369000F6093C"
                BuildableName = "MediumMenu-Sample.app"
                BlueprintName = "MediumMenu-Sample"
-               ReferencedContainer = "container:MediumMenu-Sample.xcodeproj">
+               ReferencedContainer = "container:MediumMenu.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "6E08A6BC1A87369000F6093C"
                BuildableName = "MediumMenu-SampleTests.xctest"
                BlueprintName = "MediumMenu-SampleTests"
-               ReferencedContainer = "container:MediumMenu-Sample.xcodeproj">
+               ReferencedContainer = "container:MediumMenu.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "BF08F3CC1AD8CE0700A5FECD"
                BuildableName = "MediumMenuTests.xctest"
                BlueprintName = "MediumMenuTests"
-               ReferencedContainer = "container:MediumMenu-Sample.xcodeproj">
+               ReferencedContainer = "container:MediumMenu.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -63,7 +63,7 @@
                BlueprintIdentifier = "6E08A6BC1A87369000F6093C"
                BuildableName = "MediumMenu-SampleTests.xctest"
                BlueprintName = "MediumMenu-SampleTests"
-               ReferencedContainer = "container:MediumMenu-Sample.xcodeproj">
+               ReferencedContainer = "container:MediumMenu.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -73,7 +73,7 @@
                BlueprintIdentifier = "BF08F3CC1AD8CE0700A5FECD"
                BuildableName = "MediumMenuTests.xctest"
                BlueprintName = "MediumMenuTests"
-               ReferencedContainer = "container:MediumMenu-Sample.xcodeproj">
+               ReferencedContainer = "container:MediumMenu.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -83,7 +83,7 @@
             BlueprintIdentifier = "6E08A6A71A87369000F6093C"
             BuildableName = "MediumMenu-Sample.app"
             BlueprintName = "MediumMenu-Sample"
-            ReferencedContainer = "container:MediumMenu-Sample.xcodeproj">
+            ReferencedContainer = "container:MediumMenu.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -106,7 +106,7 @@
             BlueprintIdentifier = "6E08A6A71A87369000F6093C"
             BuildableName = "MediumMenu-Sample.app"
             BlueprintName = "MediumMenu-Sample"
-            ReferencedContainer = "container:MediumMenu-Sample.xcodeproj">
+            ReferencedContainer = "container:MediumMenu.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -125,7 +125,7 @@
             BlueprintIdentifier = "6E08A6A71A87369000F6093C"
             BuildableName = "MediumMenu-Sample.app"
             BlueprintName = "MediumMenu-Sample"
-            ReferencedContainer = "container:MediumMenu-Sample.xcodeproj">
+            ReferencedContainer = "container:MediumMenu.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

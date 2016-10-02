@@ -10,7 +10,11 @@
 		6E08A6B31A87369000F6093C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E08A6B11A87369000F6093C /* Main.storyboard */; };
 		6E08A6B51A87369000F6093C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E08A6B41A87369000F6093C /* Images.xcassets */; };
 		6E08A6B81A87369000F6093C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E08A6B61A87369000F6093C /* LaunchScreen.xib */; };
-		6E1F4AB51AB6CD6E0041955A /* MediumMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1F4AB41AB6CD6E0041955A /* MediumMenu.swift */; };
+		6E3420B61D9FABAD0009371F /* MediumMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3420B41D9FABAD0009371F /* MediumMenu.swift */; };
+		6E3420B71D9FABAD0009371F /* MediumMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3420B51D9FABAD0009371F /* MediumMenuItem.swift */; };
+		6E3420BF1D9FAC6B0009371F /* MediumMenu_SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3420BE1D9FAC6B0009371F /* MediumMenu_SampleTests.swift */; };
+		6E3420CD1D9FAC820009371F /* MediumMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3420CC1D9FAC820009371F /* MediumMenuTests.swift */; };
+		6E3420CF1D9FAC820009371F /* MediumMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF08F3C31AD8CE0700A5FECD /* MediumMenu.framework */; };
 		6E4206BB1AB6E34600A51136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6AD1A87369000F6093C /* AppDelegate.swift */; };
 		6E4206BC1AB6E34600A51136 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6AF1A87369000F6093C /* ViewController.swift */; };
 		6E4206BD1AB6E34600A51136 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6DB1A87374A00F6093C /* NavigationController.swift */; };
@@ -19,30 +23,25 @@
 		6E4206C01AB6E35000A51136 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6D11A87370000F6093C /* BookmarksViewController.swift */; };
 		6E4206C11AB6E35000A51136 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6D21A87370000F6093C /* HelpViewController.swift */; };
 		6E4206C21AB6E35000A51136 /* SignoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08A6D41A87370000F6093C /* SignoutViewController.swift */; };
-		6E4206C61AB6E56800A51136 /* MediumMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4206C51AB6E56800A51136 /* MediumMenuItem.swift */; };
 		BF08F3C81AD8CE0700A5FECD /* MediumMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = BF08F3C71AD8CE0700A5FECD /* MediumMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF08F3CE1AD8CE0800A5FECD /* MediumMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF08F3C31AD8CE0700A5FECD /* MediumMenu.framework */; };
-		BF08F3D71AD8CE0800A5FECD /* MediumMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08F3D61AD8CE0800A5FECD /* MediumMenuTests.swift */; };
 		BF08F3DA1AD8CE0800A5FECD /* MediumMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF08F3C31AD8CE0700A5FECD /* MediumMenu.framework */; };
 		BF08F3DB1AD8CE0800A5FECD /* MediumMenu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF08F3C31AD8CE0700A5FECD /* MediumMenu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF08F3E31AD8CEAF00A5FECD /* MediumMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1F4AB41AB6CD6E0041955A /* MediumMenu.swift */; };
-		BF08F3E41AD8CEAF00A5FECD /* MediumMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4206C51AB6E56800A51136 /* MediumMenuItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BF08F3CF1AD8CE0800A5FECD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6E08A6A01A87369000F6093C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BF08F3C21AD8CE0700A5FECD;
-			remoteInfo = MediumMenu;
-		};
-		BF08F3D11AD8CE0800A5FECD /* PBXContainerItemProxy */ = {
+		6E3420C11D9FAC6B0009371F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6E08A6A01A87369000F6093C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6E08A6A71A87369000F6093C;
 			remoteInfo = "MediumMenu-Sample";
+		};
+		6E3420D01D9FAC820009371F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E08A6A01A87369000F6093C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF08F3C21AD8CE0700A5FECD;
+			remoteInfo = MediumMenu;
 		};
 		BF08F3D81AD8CE0800A5FECD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -81,14 +80,17 @@
 		6E08A6D41A87370000F6093C /* SignoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignoutViewController.swift; sourceTree = "<group>"; };
 		6E08A6D51A87370000F6093C /* TopStoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopStoriesViewController.swift; sourceTree = "<group>"; };
 		6E08A6DB1A87374A00F6093C /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		6E1F4AB41AB6CD6E0041955A /* MediumMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediumMenu.swift; path = ../../MediumMenu/MediumMenu.swift; sourceTree = "<group>"; };
-		6E4206C51AB6E56800A51136 /* MediumMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediumMenuItem.swift; path = ../../MediumMenu/MediumMenuItem.swift; sourceTree = "<group>"; };
+		6E3420B41D9FABAD0009371F /* MediumMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumMenu.swift; sourceTree = "<group>"; };
+		6E3420B51D9FABAD0009371F /* MediumMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumMenuItem.swift; sourceTree = "<group>"; };
+		6E3420BC1D9FAC6B0009371F /* MediumMenu-SampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MediumMenu-SampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E3420BE1D9FAC6B0009371F /* MediumMenu_SampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumMenu_SampleTests.swift; sourceTree = "<group>"; };
+		6E3420C01D9FAC6B0009371F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E3420CA1D9FAC820009371F /* MediumMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediumMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E3420CC1D9FAC820009371F /* MediumMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumMenuTests.swift; sourceTree = "<group>"; };
+		6E3420CE1D9FAC820009371F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF08F3C31AD8CE0700A5FECD /* MediumMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MediumMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF08F3C61AD8CE0700A5FECD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF08F3C71AD8CE0700A5FECD /* MediumMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediumMenu.h; sourceTree = "<group>"; };
-		BF08F3CD1AD8CE0700A5FECD /* MediumMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediumMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF08F3D51AD8CE0800A5FECD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF08F3D61AD8CE0800A5FECD /* MediumMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumMenuTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,18 +102,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF08F3BF1AD8CE0700A5FECD /* Frameworks */ = {
+		6E3420B91D9FAC6B0009371F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF08F3CA1AD8CE0700A5FECD /* Frameworks */ = {
+		6E3420C71D9FAC820009371F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF08F3CE1AD8CE0800A5FECD /* MediumMenu.framework in Frameworks */,
+				6E3420CF1D9FAC820009371F /* MediumMenu.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF08F3BF1AD8CE0700A5FECD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +132,8 @@
 			children = (
 				6E08A6AA1A87369000F6093C /* MediumMenu-Sample */,
 				BF08F3C41AD8CE0700A5FECD /* MediumMenu */,
-				BF08F3D31AD8CE0800A5FECD /* MediumMenuTests */,
+				6E3420BD1D9FAC6B0009371F /* MediumMenu-SampleTests */,
+				6E3420CB1D9FAC820009371F /* MediumMenuTests */,
 				6E08A6A91A87369000F6093C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -133,7 +143,8 @@
 			children = (
 				6E08A6A81A87369000F6093C /* MediumMenu-Sample.app */,
 				BF08F3C31AD8CE0700A5FECD /* MediumMenu.framework */,
-				BF08F3CD1AD8CE0700A5FECD /* MediumMenuTests.xctest */,
+				6E3420BC1D9FAC6B0009371F /* MediumMenu-SampleTests.xctest */,
+				6E3420CA1D9FAC820009371F /* MediumMenuTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,7 +152,6 @@
 		6E08A6AA1A87369000F6093C /* MediumMenu-Sample */ = {
 			isa = PBXGroup;
 			children = (
-				6E1F4AB61AB6CD780041955A /* MediumMenu */,
 				6E08A6D01A87370000F6093C /* Controllers */,
 				6E08A6AD1A87369000F6093C /* AppDelegate.swift */,
 				6E08A6AF1A87369000F6093C /* ViewController.swift */,
@@ -175,18 +185,29 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		6E1F4AB61AB6CD780041955A /* MediumMenu */ = {
+		6E3420BD1D9FAC6B0009371F /* MediumMenu-SampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				6E1F4AB41AB6CD6E0041955A /* MediumMenu.swift */,
-				6E4206C51AB6E56800A51136 /* MediumMenuItem.swift */,
+				6E3420BE1D9FAC6B0009371F /* MediumMenu_SampleTests.swift */,
+				6E3420C01D9FAC6B0009371F /* Info.plist */,
 			);
-			name = MediumMenu;
+			path = "MediumMenu-SampleTests";
+			sourceTree = "<group>";
+		};
+		6E3420CB1D9FAC820009371F /* MediumMenuTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E3420CC1D9FAC820009371F /* MediumMenuTests.swift */,
+				6E3420CE1D9FAC820009371F /* Info.plist */,
+			);
+			path = MediumMenuTests;
 			sourceTree = "<group>";
 		};
 		BF08F3C41AD8CE0700A5FECD /* MediumMenu */ = {
 			isa = PBXGroup;
 			children = (
+				6E3420B41D9FABAD0009371F /* MediumMenu.swift */,
+				6E3420B51D9FABAD0009371F /* MediumMenuItem.swift */,
 				BF08F3C71AD8CE0700A5FECD /* MediumMenu.h */,
 				BF08F3C51AD8CE0700A5FECD /* Supporting Files */,
 			);
@@ -197,23 +218,6 @@
 			isa = PBXGroup;
 			children = (
 				BF08F3C61AD8CE0700A5FECD /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		BF08F3D31AD8CE0800A5FECD /* MediumMenuTests */ = {
-			isa = PBXGroup;
-			children = (
-				BF08F3D61AD8CE0800A5FECD /* MediumMenuTests.swift */,
-				BF08F3D41AD8CE0800A5FECD /* Supporting Files */,
-			);
-			path = MediumMenuTests;
-			sourceTree = "<group>";
-		};
-		BF08F3D41AD8CE0800A5FECD /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				BF08F3D51AD8CE0800A5FECD /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -251,6 +255,42 @@
 			productReference = 6E08A6A81A87369000F6093C /* MediumMenu-Sample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		6E3420BB1D9FAC6B0009371F /* MediumMenu-SampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E3420C31D9FAC6B0009371F /* Build configuration list for PBXNativeTarget "MediumMenu-SampleTests" */;
+			buildPhases = (
+				6E3420B81D9FAC6B0009371F /* Sources */,
+				6E3420B91D9FAC6B0009371F /* Frameworks */,
+				6E3420BA1D9FAC6B0009371F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E3420C21D9FAC6B0009371F /* PBXTargetDependency */,
+			);
+			name = "MediumMenu-SampleTests";
+			productName = "MediumMenu-SampleTests";
+			productReference = 6E3420BC1D9FAC6B0009371F /* MediumMenu-SampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6E3420C91D9FAC820009371F /* MediumMenuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E3420D21D9FAC820009371F /* Build configuration list for PBXNativeTarget "MediumMenuTests" */;
+			buildPhases = (
+				6E3420C61D9FAC820009371F /* Sources */,
+				6E3420C71D9FAC820009371F /* Frameworks */,
+				6E3420C81D9FAC820009371F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E3420D11D9FAC820009371F /* PBXTargetDependency */,
+			);
+			name = MediumMenuTests;
+			productName = MediumMenuTests;
+			productReference = 6E3420CA1D9FAC820009371F /* MediumMenuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BF08F3C21AD8CE0700A5FECD /* MediumMenu */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF08F3DC1AD8CE0800A5FECD /* Build configuration list for PBXNativeTarget "MediumMenu" */;
@@ -269,25 +309,6 @@
 			productReference = BF08F3C31AD8CE0700A5FECD /* MediumMenu.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BF08F3CC1AD8CE0700A5FECD /* MediumMenuTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BF08F3E01AD8CE0800A5FECD /* Build configuration list for PBXNativeTarget "MediumMenuTests" */;
-			buildPhases = (
-				BF08F3C91AD8CE0700A5FECD /* Sources */,
-				BF08F3CA1AD8CE0700A5FECD /* Frameworks */,
-				BF08F3CB1AD8CE0700A5FECD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BF08F3D01AD8CE0800A5FECD /* PBXTargetDependency */,
-				BF08F3D21AD8CE0800A5FECD /* PBXTargetDependency */,
-			);
-			name = MediumMenuTests;
-			productName = MediumMenuTests;
-			productReference = BF08F3CD1AD8CE0700A5FECD /* MediumMenuTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -295,26 +316,35 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = pixyzehn;
 				TargetAttributes = {
 					6E08A6A71A87369000F6093C = {
 						CreatedOnToolsVersion = 6.1.1;
-						LastSwiftMigration = 0800;
+						DevelopmentTeam = XP5N783SQH;
+						LastSwiftMigration = 0810;
+					};
+					6E3420BB1D9FAC6B0009371F = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = XP5N783SQH;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6E08A6A71A87369000F6093C;
+					};
+					6E3420C91D9FAC820009371F = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = XP5N783SQH;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
 					};
 					BF08F3C21AD8CE0700A5FECD = {
 						CreatedOnToolsVersion = 6.3;
-						LastSwiftMigration = 0800;
-					};
-					BF08F3CC1AD8CE0700A5FECD = {
-						CreatedOnToolsVersion = 6.3;
-						LastSwiftMigration = 0800;
-						TestTargetID = 6E08A6A71A87369000F6093C;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
-			buildConfigurationList = 6E08A6A31A87369000F6093C /* Build configuration list for PBXProject "MediumMenu-Sample" */;
+			buildConfigurationList = 6E08A6A31A87369000F6093C /* Build configuration list for PBXProject "MediumMenu" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -329,7 +359,8 @@
 			targets = (
 				6E08A6A71A87369000F6093C /* MediumMenu-Sample */,
 				BF08F3C21AD8CE0700A5FECD /* MediumMenu */,
-				BF08F3CC1AD8CE0700A5FECD /* MediumMenuTests */,
+				6E3420BB1D9FAC6B0009371F /* MediumMenu-SampleTests */,
+				6E3420C91D9FAC820009371F /* MediumMenuTests */,
 			);
 		};
 /* End PBXProject section */
@@ -345,14 +376,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF08F3C11AD8CE0700A5FECD /* Resources */ = {
+		6E3420BA1D9FAC6B0009371F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF08F3CB1AD8CE0700A5FECD /* Resources */ = {
+		6E3420C81D9FAC820009371F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF08F3C11AD8CE0700A5FECD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -366,8 +404,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E4206C61AB6E56800A51136 /* MediumMenuItem.swift in Sources */,
-				6E1F4AB51AB6CD6E0041955A /* MediumMenu.swift in Sources */,
 				6E4206BE1AB6E35000A51136 /* HomeViewController.swift in Sources */,
 				6E4206BF1AB6E35000A51136 /* TopStoriesViewController.swift in Sources */,
 				6E4206C01AB6E35000A51136 /* BookmarksViewController.swift in Sources */,
@@ -379,35 +415,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6E3420B81D9FAC6B0009371F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E3420BF1D9FAC6B0009371F /* MediumMenu_SampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E3420C61D9FAC820009371F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E3420CD1D9FAC820009371F /* MediumMenuTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF08F3BE1AD8CE0700A5FECD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF08F3E31AD8CEAF00A5FECD /* MediumMenu.swift in Sources */,
-				BF08F3E41AD8CEAF00A5FECD /* MediumMenuItem.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF08F3C91AD8CE0700A5FECD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF08F3D71AD8CE0800A5FECD /* MediumMenuTests.swift in Sources */,
+				6E3420B71D9FABAD0009371F /* MediumMenuItem.swift in Sources */,
+				6E3420B61D9FABAD0009371F /* MediumMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BF08F3D01AD8CE0800A5FECD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BF08F3C21AD8CE0700A5FECD /* MediumMenu */;
-			targetProxy = BF08F3CF1AD8CE0800A5FECD /* PBXContainerItemProxy */;
-		};
-		BF08F3D21AD8CE0800A5FECD /* PBXTargetDependency */ = {
+		6E3420C21D9FAC6B0009371F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6E08A6A71A87369000F6093C /* MediumMenu-Sample */;
-			targetProxy = BF08F3D11AD8CE0800A5FECD /* PBXContainerItemProxy */;
+			targetProxy = 6E3420C11D9FAC6B0009371F /* PBXContainerItemProxy */;
+		};
+		6E3420D11D9FAC820009371F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF08F3C21AD8CE0700A5FECD /* MediumMenu */;
+			targetProxy = 6E3420D01D9FAC820009371F /* PBXContainerItemProxy */;
 		};
 		BF08F3D91AD8CE0800A5FECD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -524,30 +568,111 @@
 		6E08A6C81A87369000F6093C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XP5N783SQH;
 				INFOPLIST_FILE = "MediumMenu-Sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pixyzehn.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		6E08A6C91A87369000F6093C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XP5N783SQH;
 				INFOPLIST_FILE = "MediumMenu-Sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pixyzehn.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		6E3420C41D9FAC6B0009371F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = XP5N783SQH;
+				INFOPLIST_FILE = "MediumMenu-SampleTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pixyzehn.MediumMenu-SampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediumMenu-Sample.app/MediumMenu-Sample";
+			};
+			name = Debug;
+		};
+		6E3420C51D9FAC6B0009371F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = XP5N783SQH;
+				INFOPLIST_FILE = "MediumMenu-SampleTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pixyzehn.MediumMenu-SampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediumMenu-Sample.app/MediumMenu-Sample";
+			};
+			name = Release;
+		};
+		6E3420D31D9FAC820009371F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = XP5N783SQH;
+				INFOPLIST_FILE = MediumMenuTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pixyzehn.MediumMenuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6E3420D41D9FAC820009371F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = XP5N783SQH;
+				INFOPLIST_FILE = MediumMenuTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pixyzehn.MediumMenuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		BF08F3DD1AD8CE0800A5FECD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -568,7 +693,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pixyzehn.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -578,6 +704,7 @@
 		BF08F3DE1AD8CE0800A5FECD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -595,56 +722,17 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pixyzehn.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		BF08F3E11AD8CE0800A5FECD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MediumMenuTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pixyzehn.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediumMenu-Sample.app/MediumMenu-Sample";
-			};
-			name = Debug;
-		};
-		BF08F3E21AD8CE0800A5FECD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = MediumMenuTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pixyzehn.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediumMenu-Sample.app/MediumMenu-Sample";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6E08A6A31A87369000F6093C /* Build configuration list for PBXProject "MediumMenu-Sample" */ = {
+		6E08A6A31A87369000F6093C /* Build configuration list for PBXProject "MediumMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E08A6C51A87369000F6093C /* Debug */,
@@ -662,20 +750,27 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		6E3420C31D9FAC6B0009371F /* Build configuration list for PBXNativeTarget "MediumMenu-SampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E3420C41D9FAC6B0009371F /* Debug */,
+				6E3420C51D9FAC6B0009371F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6E3420D21D9FAC820009371F /* Build configuration list for PBXNativeTarget "MediumMenuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E3420D31D9FAC820009371F /* Debug */,
+				6E3420D41D9FAC820009371F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		BF08F3DC1AD8CE0800A5FECD /* Build configuration list for PBXNativeTarget "MediumMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF08F3DD1AD8CE0800A5FECD /* Debug */,
 				BF08F3DE1AD8CE0800A5FECD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BF08F3E01AD8CE0800A5FECD /* Build configuration list for PBXNativeTarget "MediumMenuTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BF08F3E11AD8CE0800A5FECD /* Debug */,
-				BF08F3E21AD8CE0800A5FECD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

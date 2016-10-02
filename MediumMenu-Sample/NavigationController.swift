@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MediumMenu
 
 class NavigationController: UINavigationController {
    
@@ -15,34 +16,34 @@ class NavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UIApplication.shared.statusBarStyle = .lightContent
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
+        let homeViewController = storyboard.instantiateViewController(withIdentifier: "Home") as! HomeViewController
         setViewControllers([homeViewController], animated: false)
 
         let item1 = MediumMenuItem(title: "Home") {
-            let homeViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
+            let homeViewController = storyboard.instantiateViewController(withIdentifier: "Home") as! HomeViewController
             self.setViewControllers([homeViewController], animated: false)
         }
         
         let item2 = MediumMenuItem(title: "Top stories") {
-            let topStoriesViewController = storyboard.instantiateViewControllerWithIdentifier("Top") as! TopStoriesViewController
+            let topStoriesViewController = storyboard.instantiateViewController(withIdentifier: "Top") as! TopStoriesViewController
             self.setViewControllers([topStoriesViewController], animated: false)
         }
         
         let item3 = MediumMenuItem(title: "Bookmarks") {
-            let bookMarksViewController = storyboard.instantiateViewControllerWithIdentifier("Bookmarks") as! BookmarksViewController
+            let bookMarksViewController = storyboard.instantiateViewController(withIdentifier: "Bookmarks") as! BookmarksViewController
             self.setViewControllers([bookMarksViewController], animated: false)
         }
 
         let item4 = MediumMenuItem(title: "Help") {
-            let helpViewController = storyboard.instantiateViewControllerWithIdentifier("Help") as! HelpViewController
+            let helpViewController = storyboard.instantiateViewController(withIdentifier: "Help") as! HelpViewController
             self.setViewControllers([helpViewController], animated: false)
         }
         
         let item5 = MediumMenuItem(title: "Sign out") {
-            let signoutViewController = storyboard.instantiateViewControllerWithIdentifier("Signout") as! SignoutViewController
+            let signoutViewController = storyboard.instantiateViewController(withIdentifier: "Signout") as! SignoutViewController
             self.setViewControllers([signoutViewController], animated: false)
         }
 
@@ -55,7 +56,7 @@ class NavigationController: UINavigationController {
 }
 
 extension UINavigationBar {
-    public override func sizeThatFits(size: CGSize) -> CGSize {
-        return CGSizeMake(UIScreen.mainScreen().bounds.size.width, 60)
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.size.width, height: 60)
     }
 }
