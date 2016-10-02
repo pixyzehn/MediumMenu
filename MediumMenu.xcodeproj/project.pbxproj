@@ -323,12 +323,12 @@
 					6E08A6A71A87369000F6093C = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = XP5N783SQH;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0800;
 					};
 					6E3420BB1D9FAC6B0009371F = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = XP5N783SQH;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 6E08A6A71A87369000F6093C;
 					};
@@ -340,7 +340,7 @@
 					};
 					BF08F3C21AD8CE0700A5FECD = {
 						CreatedOnToolsVersion = 6.3;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
