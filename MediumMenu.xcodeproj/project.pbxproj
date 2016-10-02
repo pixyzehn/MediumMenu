@@ -603,7 +603,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = XP5N783SQH;
 				INFOPLIST_FILE = "MediumMenu-SampleTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pixyzehn.MediumMenu-SampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -624,7 +624,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = XP5N783SQH;
 				INFOPLIST_FILE = "MediumMenu-SampleTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pixyzehn.MediumMenu-SampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -642,7 +642,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = XP5N783SQH;
 				INFOPLIST_FILE = MediumMenuTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pixyzehn.MediumMenuTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -661,7 +661,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = XP5N783SQH;
 				INFOPLIST_FILE = MediumMenuTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pixyzehn.MediumMenuTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -757,6 +757,7 @@
 				6E3420C51D9FAC6B0009371F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E3420D21D9FAC820009371F /* Build configuration list for PBXNativeTarget "MediumMenuTests" */ = {
 			isa = XCConfigurationList;
@@ -765,6 +766,7 @@
 				6E3420D41D9FAC820009371F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF08F3DC1AD8CE0800A5FECD /* Build configuration list for PBXNativeTarget "MediumMenu" */ = {
 			isa = XCConfigurationList;
