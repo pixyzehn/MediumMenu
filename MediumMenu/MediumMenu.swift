@@ -255,6 +255,8 @@ extension MediumMenu: UITableViewDataSource {
         setMenuTitleAlligment(for: cell)
         cell.backgroundColor = UIColor.clear
         cell.selectionStyle = .none
+        cell.textLabel?.numberOfLines = 0
+
         cell.textLabel?.textColor = highlighedIndex == indexPath.row ? highlightTextColor : textColor
         cell.textLabel?.font = titleFont
         let mediumMenuItem: MediumMenuItem?
