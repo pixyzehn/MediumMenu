@@ -1,3 +1,5 @@
+**Notice: MediumMenu is no longer being maintained/updated.**
+
 MediumMenu
 ====================
 
@@ -9,9 +11,9 @@ Inspired by [RBMenu](https://github.com/RoshanNindrai/RBMenu). I made that a ref
 
 ![MediumMenu](https://github.com/pixyzehn/MediumMenu/blob/master/Assets/MediumMenu.gif)
 
-##Installation
+## Installation
 
-###CocoaPods
+### CocoaPods
 
 The easiest way to get started is to use [CocoaPods](http://cocoapods.org/). Add the following line to your Podfile:
 
@@ -28,7 +30,7 @@ Then, run the following command:
 pod install
 ```
 
-###Carthage
+### Carthage
 
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
 
@@ -50,7 +52,7 @@ Run `carthage update`.
 $ carthage update
 ```
 
-###Other
+### Other
 
 Add the MediumMenu (including MediumMenu.swift) folder into your project.
 
