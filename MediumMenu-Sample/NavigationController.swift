@@ -50,7 +50,7 @@ class NavigationController: UINavigationController {
         menu = MediumMenu(items: [item1, item2, item3, item4, item5], forViewController: self)
     }
     
-    func showMenu() {
+    @objc func showMenu() {
         menu?.show()
     }
 }
