@@ -1,5 +1,3 @@
-**Notice: MediumMenu is no longer being maintained/updated.**
-
 MediumMenu
 ====================
 
@@ -18,7 +16,7 @@ Inspired by [RBMenu](https://github.com/RoshanNindrai/RBMenu). I made that a ref
 The easiest way to get started is to use [CocoaPods](http://cocoapods.org/). Add the following line to your Podfile:
 
 ```ruby
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 # The following is a Library of Swift.
 pod 'MediumMenu'
