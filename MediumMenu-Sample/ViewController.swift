@@ -17,7 +17,7 @@ class ViewController: UIViewController {
             style: .plain, target: navigationController,
             action: #selector(NavigationController.showMenu)
         )
-        item.imageInsets = UIEdgeInsetsMake(-10, 0, 0, 0)
+        item.imageInsets = UIEdgeInsets.init(top: -10, left: 0, bottom: 0, right: 0)
         item.tintColor = UIColor.black
         navigationItem.leftBarButtonItem = item
     } 

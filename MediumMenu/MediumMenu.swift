@@ -101,7 +101,8 @@ open class MediumMenu: UIView {
 
         let menuController = UIViewController()
         menuController.view = self
-        
+        menuController.view = self
+        menuController.view.backgroundColor = DefaultColor.mediumBlackColor
         UIApplication.shared.delegate?.window??.rootViewController = contentController
         UIApplication.shared.delegate?.window??.insertSubview(menuController.view, at: 0)
     }
@@ -134,7 +135,7 @@ open class MediumMenu: UIView {
         }
     }
     
-    open func panned(on pan: UIPanGestureRecognizer) {
+    @objc open func panned(on pan: UIPanGestureRecognizer) {
         if !enabled || !panGestureEnable { return }
 
         guard

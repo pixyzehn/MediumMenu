@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11521.1" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vi5-LG-WFs">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vi5-LG-WFs">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,50 +41,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27w-re-QW1">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="LMh-ct-gIO">
-                                        <variation key="heightClass=regular" constant="200"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="30" id="w4K-4n-8W0"/>
-                                </constraints>
+                                <rect key="frame" x="88" y="319" width="199" height="29"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="LMh-ct-gIO"/>
-                                        <exclude reference="w4K-4n-8W0"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="LMh-ct-gIO"/>
-                                        <include reference="w4K-4n-8W0"/>
-                                    </mask>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="27w-re-QW1" secondAttribute="centerX" id="DZB-n1-k8M"/>
-                            <constraint firstAttribute="centerY" secondItem="27w-re-QW1" secondAttribute="centerY" id="eYO-02-rjY"/>
+                            <constraint firstItem="27w-re-QW1" firstAttribute="centerX" secondItem="PAa-b1-YEn" secondAttribute="centerX" id="5gk-9T-knz"/>
+                            <constraint firstItem="27w-re-QW1" firstAttribute="leading" secondItem="PAa-b1-YEn" secondAttribute="leadingMargin" constant="72" id="ciD-Er-ZDo"/>
+                            <constraint firstItem="27w-re-QW1" firstAttribute="centerY" secondItem="PAa-b1-YEn" secondAttribute="centerY" id="gN9-kV-v0h"/>
+                            <constraint firstItem="27w-re-QW1" firstAttribute="top" secondItem="3UN-G4-ii8" secondAttribute="bottom" constant="299" id="jcJ-da-Y1u"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="27w-re-QW1"/>
                             </mask>
-                            <mask key="constraints">
-                                <exclude reference="DZB-n1-k8M"/>
-                                <exclude reference="eYO-02-rjY"/>
-                            </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="27w-re-QW1"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="DZB-n1-k8M"/>
-                                <include reference="eYO-02-rjY"/>
                             </mask>
                         </variation>
                     </view>
@@ -103,50 +83,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top stories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1y-MB-AIm">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="TdF-7E-O8y"/>
-                                    <constraint firstAttribute="width" constant="100" id="XR0-rr-Cdq">
-                                        <variation key="heightClass=regular" constant="200"/>
-                                    </constraint>
-                                </constraints>
+                                <rect key="frame" x="88" y="319" width="199" height="29"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="TdF-7E-O8y"/>
-                                        <exclude reference="XR0-rr-Cdq"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="TdF-7E-O8y"/>
-                                        <include reference="XR0-rr-Cdq"/>
-                                    </mask>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="P1y-MB-AIm" secondAttribute="centerX" id="64m-Hp-NJx"/>
-                            <constraint firstAttribute="centerY" secondItem="P1y-MB-AIm" secondAttribute="centerY" id="bM3-BX-Aq5"/>
+                            <constraint firstItem="P1y-MB-AIm" firstAttribute="leading" secondItem="CSD-sm-irS" secondAttribute="leadingMargin" constant="72" id="PTI-HN-QyH"/>
+                            <constraint firstItem="P1y-MB-AIm" firstAttribute="top" secondItem="oNs-7A-Uhm" secondAttribute="bottom" constant="299" id="Qi4-R5-w2Q"/>
+                            <constraint firstItem="P1y-MB-AIm" firstAttribute="centerY" secondItem="CSD-sm-irS" secondAttribute="centerY" id="cTo-aG-NgD"/>
+                            <constraint firstItem="P1y-MB-AIm" firstAttribute="centerX" secondItem="CSD-sm-irS" secondAttribute="centerX" id="zrR-Wd-JrT"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="P1y-MB-AIm"/>
                             </mask>
-                            <mask key="constraints">
-                                <exclude reference="64m-Hp-NJx"/>
-                                <exclude reference="bM3-BX-Aq5"/>
-                            </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="P1y-MB-AIm"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="64m-Hp-NJx"/>
-                                <include reference="bM3-BX-Aq5"/>
                             </mask>
                         </variation>
                     </view>
@@ -168,50 +125,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bookmarks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXG-ap-S71">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="6rf-tl-OYM">
-                                        <variation key="heightClass=regular" constant="200"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="30" id="zam-g4-sAE"/>
-                                </constraints>
+                                <rect key="frame" x="88" y="319" width="199" height="29"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="6rf-tl-OYM"/>
-                                        <exclude reference="zam-g4-sAE"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="6rf-tl-OYM"/>
-                                        <include reference="zam-g4-sAE"/>
-                                    </mask>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="bXG-ap-S71" secondAttribute="centerY" id="JZu-am-QpL"/>
-                            <constraint firstAttribute="centerX" secondItem="bXG-ap-S71" secondAttribute="centerX" id="S3H-wU-K0n"/>
+                            <constraint firstItem="bXG-ap-S71" firstAttribute="centerX" secondItem="90I-Pr-hFq" secondAttribute="centerX" id="9yi-3t-GP7"/>
+                            <constraint firstItem="bXG-ap-S71" firstAttribute="centerY" secondItem="90I-Pr-hFq" secondAttribute="centerY" id="cRk-eA-cWX"/>
+                            <constraint firstItem="bXG-ap-S71" firstAttribute="top" secondItem="orh-Y9-lgm" secondAttribute="bottom" constant="299" id="h56-ok-agj"/>
+                            <constraint firstItem="bXG-ap-S71" firstAttribute="leading" secondItem="90I-Pr-hFq" secondAttribute="leadingMargin" constant="72" id="q0f-ef-uQR"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="bXG-ap-S71"/>
                             </mask>
-                            <mask key="constraints">
-                                <exclude reference="JZu-am-QpL"/>
-                                <exclude reference="S3H-wU-K0n"/>
-                            </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="bXG-ap-S71"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="JZu-am-QpL"/>
-                                <include reference="S3H-wU-K0n"/>
                             </mask>
                         </variation>
                     </view>
@@ -233,50 +167,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8M-bX-n6T">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="lgq-L0-U6A"/>
-                                    <constraint firstAttribute="width" constant="100" id="xdh-A2-e2K">
-                                        <variation key="heightClass=regular" constant="200"/>
-                                    </constraint>
-                                </constraints>
+                                <rect key="frame" x="88" y="319" width="199" height="29"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="lgq-L0-U6A"/>
-                                        <exclude reference="xdh-A2-e2K"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="lgq-L0-U6A"/>
-                                        <include reference="xdh-A2-e2K"/>
-                                    </mask>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="b8M-bX-n6T" secondAttribute="centerX" id="WgS-K4-wd0"/>
-                            <constraint firstAttribute="centerY" secondItem="b8M-bX-n6T" secondAttribute="centerY" id="bNB-0o-jIR"/>
+                            <constraint firstItem="b8M-bX-n6T" firstAttribute="leading" secondItem="Vs4-Re-kIp" secondAttribute="leadingMargin" constant="72" id="DcO-vx-mRV"/>
+                            <constraint firstItem="b8M-bX-n6T" firstAttribute="top" secondItem="3eI-T9-Dju" secondAttribute="bottom" constant="299" id="V89-a1-IRq"/>
+                            <constraint firstItem="b8M-bX-n6T" firstAttribute="centerY" secondItem="Vs4-Re-kIp" secondAttribute="centerY" id="lFm-we-Uc0"/>
+                            <constraint firstItem="b8M-bX-n6T" firstAttribute="centerX" secondItem="Vs4-Re-kIp" secondAttribute="centerX" id="w8h-dd-JjJ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="b8M-bX-n6T"/>
                             </mask>
-                            <mask key="constraints">
-                                <exclude reference="WgS-K4-wd0"/>
-                                <exclude reference="bNB-0o-jIR"/>
-                            </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="b8M-bX-n6T"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="WgS-K4-wd0"/>
-                                <include reference="bNB-0o-jIR"/>
                             </mask>
                         </variation>
                     </view>
@@ -298,50 +209,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyk-Zy-yqv">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="fXQ-88-Kn3"/>
-                                    <constraint firstAttribute="width" constant="100" id="gJF-3t-12u">
-                                        <variation key="heightClass=regular" constant="200"/>
-                                    </constraint>
-                                </constraints>
+                                <rect key="frame" x="88" y="319" width="199" height="29"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="fXQ-88-Kn3"/>
-                                        <exclude reference="gJF-3t-12u"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="fXQ-88-Kn3"/>
-                                        <include reference="gJF-3t-12u"/>
-                                    </mask>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="yyk-Zy-yqv" secondAttribute="centerX" id="Akz-9h-pJc"/>
-                            <constraint firstAttribute="centerY" secondItem="yyk-Zy-yqv" secondAttribute="centerY" id="G2B-i8-ejC"/>
+                            <constraint firstItem="yyk-Zy-yqv" firstAttribute="centerX" secondItem="pVF-nz-P8i" secondAttribute="centerX" id="2my-nI-cQT"/>
+                            <constraint firstItem="yyk-Zy-yqv" firstAttribute="leading" secondItem="pVF-nz-P8i" secondAttribute="leadingMargin" constant="72" id="6iN-dy-rNJ"/>
+                            <constraint firstItem="yyk-Zy-yqv" firstAttribute="top" secondItem="0nk-6K-agc" secondAttribute="bottom" constant="299" id="VC4-Ot-pUN"/>
+                            <constraint firstItem="yyk-Zy-yqv" firstAttribute="centerY" secondItem="pVF-nz-P8i" secondAttribute="centerY" id="mAF-fy-jgZ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="yyk-Zy-yqv"/>
                             </mask>
-                            <mask key="constraints">
-                                <exclude reference="Akz-9h-pJc"/>
-                                <exclude reference="G2B-i8-ejC"/>
-                            </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="yyk-Zy-yqv"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="Akz-9h-pJc"/>
-                                <include reference="G2B-i8-ejC"/>
                             </mask>
                         </variation>
                     </view>
@@ -356,7 +244,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vi5-LG-WFs" customClass="NavigationController" customModule="MediumMenu_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zVR-j9-cWZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
